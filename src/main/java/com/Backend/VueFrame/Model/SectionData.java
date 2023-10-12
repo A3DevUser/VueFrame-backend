@@ -21,7 +21,19 @@ public class SectionData {
 	
 	@Column(name = "SEC_STORED_VALUE")
 	private String secStoredValue;
-
+	
+	@Column(name = "SEC_IS_OPEN")
+	private String isOpen;
+	
+	@Column(name = "WIDTH")
+	private String width;
+	
+	@Column(name = "HEIGHT")
+	private String height;
+	
+	@Column(name = "SEC_TYPE")
+    private String secType;
+	
 	public String getSecId() {
 		return secId;
 	}
@@ -53,13 +65,59 @@ public class SectionData {
 	public void setSecStoredValue(String secStoredValue) {
 		this.secStoredValue = secStoredValue;
 	}
+	
+	
 
-	public SectionData(String secId, String formId, String secName, String secStoredValue) {
+	public String getIsOpen() {
+		return isOpen;
+	}
+
+	public void setIsOpen(String isOpen) {
+		this.isOpen = isOpen;
+	}
+
+	
+
+	public String getWidth() {
+		return width;
+	}
+
+	public void setWidth(String width) {
+		this.width = width;
+	}
+
+	public String getHeight() {
+		return height;
+	}
+
+	public void setHeight(String height) {
+		this.height = height;
+	}
+
+	
+	
+	
+	public String getSecType() {
+		return secType;
+	}
+
+	public void setSecType(String secType) {
+		this.secType = secType;
+	}
+
+	
+
+	public SectionData(String secId, String formId, String secName, String secStoredValue, String isOpen, String width,
+			String height, String secType) {
 		super();
 		this.secId = secId;
 		this.formId = formId;
 		this.secName = secName;
 		this.secStoredValue = secStoredValue;
+		this.isOpen = isOpen;
+		this.width = width;
+		this.height = height;
+		this.secType = secType;
 	}
 
 	public SectionData() {
