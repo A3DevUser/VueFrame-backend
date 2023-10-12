@@ -25,6 +25,9 @@ public class ColumnHeaderData {
 	@Column(name = "COLUMN_FILTER_TYPE")
 	private String columnFilterType;
 
+	@Column(name = "SEC_ID")
+	private String secId;
+	
 	public String getColumnId() {
 		return columnId;
 	}
@@ -64,15 +67,27 @@ public class ColumnHeaderData {
 	public void setColumnFilterType(String columnFilterType) {
 		this.columnFilterType = columnFilterType;
 	}
+	
+	
 
+	public String getSecId() {
+		return secId;
+	}
+
+	public void setSecId(String secId) {
+		this.secId = secId;
+	}
+
+	
 	public ColumnHeaderData(String columnId, String formId, String columnName, String columnStoredValue,
-			String columnFilterType) {
+			String columnFilterType, String secId) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
 		this.columnName = columnName;
 		this.columnStoredValue = columnStoredValue;
 		this.columnFilterType = columnFilterType;
+		this.secId = secId;
 	}
 
 	public ColumnHeaderData() {
