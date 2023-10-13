@@ -9,13 +9,9 @@ import javax.persistence.Table;
 @Table(name = "VF_SECTION_DETAILS")
 public class SectionData {
 	
-	
+     @Id
 	@Column(name = "SEC_ID")
 	private String secId;
-	
-	@Id
-	@Column(name = "SUB_SEC_ID")
-	private String subSecId;
 	
 	@Column(name = "FORM_ID")
 	private String formId;
@@ -34,13 +30,6 @@ public class SectionData {
 	
 	@Column(name = "HEIGHT")
 	private String height;
-	
-	@Column(name = "SEC_TYPE")
-    private String secType;
-	
-	
-	
-	
 	
 	public String getSecId() {
 		return secId;
@@ -102,32 +91,8 @@ public class SectionData {
 		this.height = height;
 	}
 
-	
-	
-	
-	public String getSecType() {
-		return secType;
-	}
-
-	public void setSecType(String secType) {
-		this.secType = secType;
-	}
-
-	
-	
-
-	
-
-	public String getSubSecId() {
-		return subSecId;
-	}
-
-	public void setSubSecId(String subSecId) {
-		this.subSecId = subSecId;
-	}
-
 	public SectionData(String secId, String formId, String secName, String secStoredValue, String isOpen, String width,
-			String height, String secType, String subSecId) {
+			String height) {
 		super();
 		this.secId = secId;
 		this.formId = formId;
@@ -136,8 +101,6 @@ public class SectionData {
 		this.isOpen = isOpen;
 		this.width = width;
 		this.height = height;
-		this.secType = secType;
-		this.subSecId = subSecId;
 	}
 
 	public SectionData() {
