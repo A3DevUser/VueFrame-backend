@@ -28,6 +28,9 @@ public class SubSectionDetails {
 	
 	@Column(name = "SUB_SEC_WIDTH")
 	private String subSecWidth;
+	
+	@Column(name = "SUB_SEC_IS_OPEN")
+	private String subSecIsOpen;
 
 	public String getSubSecId() {
 		return subSecId;
@@ -76,9 +79,21 @@ public class SubSectionDetails {
 	public void setSubSecWidth(String subSecWidth) {
 		this.subSecWidth = subSecWidth;
 	}
+	
+	
+
+	public String getSubSecIsOpen() {
+		return subSecIsOpen;
+	}
+
+	public void setSubSecIsOpen(String subSecIsOpen) {
+		this.subSecIsOpen = subSecIsOpen;
+	}
+
+	
 
 	public SubSectionDetails(String subSecId, String formId, String secId, String subSecName, String subSecType,
-			String subSecWidth) {
+			String subSecWidth, String subSecIsOpen) {
 		super();
 		this.subSecId = subSecId;
 		this.formId = formId;
@@ -86,12 +101,14 @@ public class SubSectionDetails {
 		this.subSecName = subSecName;
 		this.subSecType = subSecType;
 		this.subSecWidth = subSecWidth;
+		this.subSecIsOpen = subSecIsOpen;
 	}
 
 	public SubSectionDetails() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 	
 	
