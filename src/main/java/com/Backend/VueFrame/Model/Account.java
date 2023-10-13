@@ -1,29 +1,17 @@
 package com.Backend.VueFrame.Model;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Embeddable
+@Entity
 public class Account {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String accId;
 
-	private String accountId;
-
-	public String getAccountId() {
-		return accountId;
-	}
-
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
-	}
-
-	public Account(String accountId) {
-		super();
-		this.accountId = accountId;
-	}
-
-	public Account() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
+    // Getters and setters
 }

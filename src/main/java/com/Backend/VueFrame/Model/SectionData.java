@@ -34,6 +34,11 @@ public class SectionData {
 	@Column(name = "SEC_TYPE")
     private String secType;
 	
+	@Column(name = "SUB_SEC_ID")
+	private String subSecId;
+	
+	
+	
 	public String getSecId() {
 		return secId;
 	}
@@ -106,9 +111,20 @@ public class SectionData {
 	}
 
 	
+	
+
+	
+
+	public String getSubSecId() {
+		return subSecId;
+	}
+
+	public void setSubSecId(String subSecId) {
+		this.subSecId = subSecId;
+	}
 
 	public SectionData(String secId, String formId, String secName, String secStoredValue, String isOpen, String width,
-			String height, String secType) {
+			String height, String secType, String subSecId) {
 		super();
 		this.secId = secId;
 		this.formId = formId;
@@ -118,6 +134,7 @@ public class SectionData {
 		this.width = width;
 		this.height = height;
 		this.secType = secType;
+		this.subSecId = subSecId;
 	}
 
 	public SectionData() {

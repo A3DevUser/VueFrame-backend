@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.query.Procedure;
 
-import com.Backend.VueFrame.Model.JsonObjectData;
+import com.Backend.VueFrame.Model.Action;
 
-public interface JsonObjectRepository extends JpaRepository<JsonObjectData, String> {
+public interface JsonObjectRepository extends JpaRepository<Action, String> {
 
 //	
 //	@Procedure("InsertDataFromJson")
