@@ -30,6 +30,9 @@ public class ColumnHeaderData {
 	
 	@Column(name = "CELL_TYPE")
 	private String cellType;
+	
+	@Column(name = "WIDTH")
+	private String width;
 
 	public String getColumnId() {
 		return columnId;
@@ -87,8 +90,19 @@ public class ColumnHeaderData {
 		this.cellType = cellType;
 	}
 
+	
+	
+	public String getWidth() {
+		return width;
+	}
+
+	public void setWidth(String width) {
+		this.width = width;
+	}
+
+	
 	public ColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
-			String secId, String cellType) {
+			String secId, String cellType, String width) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
@@ -97,6 +111,7 @@ public class ColumnHeaderData {
 		this.columnFilterType = columnFilterType;
 		this.secId = secId;
 		this.cellType = cellType;
+		this.width = width;
 	}
 
 	public ColumnHeaderData() {
