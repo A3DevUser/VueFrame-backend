@@ -17,17 +17,17 @@ public class ColumnHeaderData {
 	private String formId;
 	
 	@Column(name = "COLUMN_NAME")
-	private String columnName;
+	private String fieldName;
 	
 	@Column(name = "COLUMN_STORED_VALUE")
-	private String columnStoredValue;
+	private String accessor;
 	
 	@Column(name = "COLUMN_FILTER_TYPE")
 	private String columnFilterType;
 
 	@Column(name = "SEC_ID")
 	private String secId;
-	
+
 	public String getColumnId() {
 		return columnId;
 	}
@@ -44,20 +44,20 @@ public class ColumnHeaderData {
 		this.formId = formId;
 	}
 
-	public String getColumnName() {
-		return columnName;
+	public String getFieldName() {
+		return fieldName;
 	}
 
-	public void setColumnName(String columnName) {
-		this.columnName = columnName;
+	public void setFieldName(String fieldName) {
+		this.fieldName = fieldName;
 	}
 
-	public String getColumnStoredValue() {
-		return columnStoredValue;
+	public String getAccessor() {
+		return accessor;
 	}
 
-	public void setColumnStoredValue(String columnStoredValue) {
-		this.columnStoredValue = columnStoredValue;
+	public void setAccessor(String accessor) {
+		this.accessor = accessor;
 	}
 
 	public String getColumnFilterType() {
@@ -67,8 +67,6 @@ public class ColumnHeaderData {
 	public void setColumnFilterType(String columnFilterType) {
 		this.columnFilterType = columnFilterType;
 	}
-	
-	
 
 	public String getSecId() {
 		return secId;
@@ -78,14 +76,13 @@ public class ColumnHeaderData {
 		this.secId = secId;
 	}
 
-	
-	public ColumnHeaderData(String columnId, String formId, String columnName, String columnStoredValue,
-			String columnFilterType, String secId) {
+	public ColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
+			String secId) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
-		this.columnName = columnName;
-		this.columnStoredValue = columnStoredValue;
+		this.fieldName = fieldName;
+		this.accessor = accessor;
 		this.columnFilterType = columnFilterType;
 		this.secId = secId;
 	}
@@ -96,7 +93,4 @@ public class ColumnHeaderData {
 	}
 	
 	
-	
-
-
 }
