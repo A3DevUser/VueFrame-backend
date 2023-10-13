@@ -29,5 +29,6 @@ public class JsonObjectService {
         procedureQuery.registerStoredProcedureParameter("p_action_id", String.class, ParameterMode.IN);
         procedureQuery.setParameter("p_action_id", jsonObject.getActionId());
         procedureQuery.execute();
+        
 	}
 }
