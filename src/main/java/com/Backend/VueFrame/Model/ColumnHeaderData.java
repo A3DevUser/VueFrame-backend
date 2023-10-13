@@ -27,6 +27,9 @@ public class ColumnHeaderData {
 
 	@Column(name = "SEC_ID")
 	private String secId;
+	
+	@Column(name = "CELL_TYPE")
+	private String cellType;
 
 	public String getColumnId() {
 		return columnId;
@@ -76,8 +79,16 @@ public class ColumnHeaderData {
 		this.secId = secId;
 	}
 
+	public String getCellType() {
+		return cellType;
+	}
+
+	public void setCellType(String cellType) {
+		this.cellType = cellType;
+	}
+
 	public ColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
-			String secId) {
+			String secId, String cellType) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
@@ -85,12 +96,14 @@ public class ColumnHeaderData {
 		this.accessor = accessor;
 		this.columnFilterType = columnFilterType;
 		this.secId = secId;
+		this.cellType = cellType;
 	}
 
 	public ColumnHeaderData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
 	
 	
 }
