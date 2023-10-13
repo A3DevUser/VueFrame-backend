@@ -39,6 +39,12 @@ public class ColumnHeaderData {
 	
 	@Column(name = "SUB_SEC_ID")
 	private String subSecId;
+	
+	@Column(name = "SUB_SEC_WIDTH")
+	private String subSecWidth;
+	
+	@Column(name = "SUB_SEC_TYPE")
+	private String subSecType;
 
 	public String getColumnId() {
 		return columnId;
@@ -124,10 +130,31 @@ public class ColumnHeaderData {
 	public void setSubSecId(String subSecId) {
 		this.subSecId = subSecId;
 	}
+	
+	
 
 	
+	public String getSubSecWidth() {
+		return subSecWidth;
+	}
+
+	public void setSubSecWidth(String subSecWidth) {
+		this.subSecWidth = subSecWidth;
+	}
+
+	public String getSubSecType() {
+		return subSecType;
+	}
+
+	public void setSubSecType(String subSecType) {
+		this.subSecType = subSecType;
+	}
+
+	
+
 	public ColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
-			String secId, String cellType, String width, String subSecName, String subSecId) {
+			String secId, String cellType, String width, String subSecName, String subSecId, String subSecWidth,
+			String subSecType) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
@@ -139,6 +166,8 @@ public class ColumnHeaderData {
 		this.width = width;
 		this.subSecName = subSecName;
 		this.subSecId = subSecId;
+		this.subSecWidth = subSecWidth;
+		this.subSecType = subSecType;
 	}
 
 	public ColumnHeaderData() {
