@@ -43,6 +43,10 @@ public class FieldData {
 	@Column(name = "NAME")
 	private String name;
 
+	
+	
+	
+	
 	public String getFieldId() {
 		return fieldId;
 	}

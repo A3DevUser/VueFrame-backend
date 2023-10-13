@@ -33,6 +33,12 @@ public class ColumnHeaderData {
 	
 	@Column(name = "WIDTH")
 	private String width;
+	
+	@Column(name = "SUB_SEC_NAME")
+	private String subSecName;
+	
+	@Column(name = "SUB_SEC_ID")
+	private String subSecId;
 
 	public String getColumnId() {
 		return columnId;
@@ -101,8 +107,27 @@ public class ColumnHeaderData {
 	}
 
 	
+	
+	
+	public String getSubSecName() {
+		return subSecName;
+	}
+
+	public void setSubSecName(String subSecName) {
+		this.subSecName = subSecName;
+	}
+
+	public String getSubSecId() {
+		return subSecId;
+	}
+
+	public void setSubSecId(String subSecId) {
+		this.subSecId = subSecId;
+	}
+
+	
 	public ColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
-			String secId, String cellType, String width) {
+			String secId, String cellType, String width, String subSecName, String subSecId) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
@@ -112,6 +137,8 @@ public class ColumnHeaderData {
 		this.secId = secId;
 		this.cellType = cellType;
 		this.width = width;
+		this.subSecName = subSecName;
+		this.subSecId = subSecId;
 	}
 
 	public ColumnHeaderData() {
@@ -119,6 +146,7 @@ public class ColumnHeaderData {
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	
 	
 }
