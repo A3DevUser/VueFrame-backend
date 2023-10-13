@@ -56,7 +56,6 @@ public class Action {
 		// TODO Auto-generated constructor stub
 	}
 
-    // Getters and setters
 }
 	    
 	

@@ -9,9 +9,13 @@ import javax.persistence.Table;
 @Table(name = "VF_SECTION_DETAILS")
 public class SectionData {
 	
-	@Id
+	
 	@Column(name = "SEC_ID")
 	private String secId;
+	
+	@Id
+	@Column(name = "SUB_SEC_ID")
+	private String subSecId;
 	
 	@Column(name = "FORM_ID")
 	private String formId;
@@ -34,8 +38,7 @@ public class SectionData {
 	@Column(name = "SEC_TYPE")
     private String secType;
 	
-	@Column(name = "SUB_SEC_ID")
-	private String subSecId;
+	
 	
 	
 	

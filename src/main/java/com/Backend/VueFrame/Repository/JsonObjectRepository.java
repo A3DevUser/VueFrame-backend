@@ -9,8 +9,8 @@ import com.Backend.VueFrame.Model.Action;
 
 public interface JsonObjectRepository extends JpaRepository<Action, String> {
 
-//	
-//	@Procedure("InsertDataFromJson")
-//	Object insertJasonData();
-//	
+	
+	@Procedure("InsertDataFromJson")
+	Object insertJasonData(Object list);
+	
 }
