@@ -31,6 +31,9 @@ public class NavBarController {
 	@GetMapping("getNavEle")
 	public List<NavBarData> getNavData() {
 		
+		
 		return navServ.getNavData();
+		
+		
 	}
 }
