@@ -32,6 +32,8 @@ public class SubSectionDetails {
 	@Column(name = "SUB_SEC_IS_OPEN")
 	private String subSecIsOpen;
 
+	
+	
 	public String getSubSecId() {
 		return subSecId;
 	}

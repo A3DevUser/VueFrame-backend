@@ -21,6 +21,9 @@ public class NavBarData {
 	
 	@Column(name = "NAV_STORED_VALUE")
 	private String navStoredValue;
+	
+	@Column (name = "NAVIGATE")
+	private String navigate;
 
 	public String getNavId() {
 		return navId;
@@ -54,12 +57,22 @@ public class NavBarData {
 		this.navStoredValue = navStoredValue;
 	}
 
-	public NavBarData(String navId, String formId, String navName, String navStoredValue) {
+	public String getNavigate() {
+		return navigate;
+	}
+
+	public void setNavigate(String navigate) {
+		this.navigate = navigate;
+	}
+
+	
+	public NavBarData(String navId, String formId, String navName, String navStoredValue, String navigate) {
 		super();
 		this.navId = navId;
 		this.formId = formId;
 		this.navName = navName;
 		this.navStoredValue = navStoredValue;
+		this.navigate = navigate;
 	}
 
 	public NavBarData() {
