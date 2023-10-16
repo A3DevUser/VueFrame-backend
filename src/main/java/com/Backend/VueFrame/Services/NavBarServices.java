@@ -21,4 +21,12 @@ public class NavBarServices {
 		
 		return navRepo.getByFormId(formId);
 	}
+	
+	
+	public List<NavBarData> getNavData() {
+		return navRepo.findAll();
+		
+	}
 }
+
+
