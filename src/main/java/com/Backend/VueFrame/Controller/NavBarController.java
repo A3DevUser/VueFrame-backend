@@ -22,9 +22,15 @@ public class NavBarController {
 	private NavBarServices navServ;
 	
 	
-	@GetMapping("getNavEle")
-	public List<NavBarData> getNavData(@RequestParam String formId) {
+	@GetMapping("getNavEleFormId")
+	public List<NavBarData> getNavDataByFormId(@RequestParam String formId) {
 		
 		return navServ.getNavBarData(formId);
+	}
+	
+	@GetMapping("getNavEle")
+	public List<NavBarData> getNavData() {
+		
+		return navServ.getNavData();
 	}
 }
