@@ -30,6 +30,9 @@ public class NavBarData {
 	
 	@Column (name = "URL")
 	private String url;
+	
+	@Column (name = "order_number")
+	private String number;
 
 	public String getNavId() {
 		return navId;
@@ -91,8 +94,19 @@ public class NavBarData {
 
 	
 	
+
+	
+
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
 	public NavBarData(String navId, String formId, String navName, String navStoredValue, String navigate,
-			String navType, String url) {
+			String navType, String url, String number) {
 		super();
 		this.navId = navId;
 		this.formId = formId;
@@ -101,6 +115,7 @@ public class NavBarData {
 		this.navigate = navigate;
 		this.navType = navType;
 		this.url = url;
+		this.number = number;
 	}
 
 	public NavBarData() {

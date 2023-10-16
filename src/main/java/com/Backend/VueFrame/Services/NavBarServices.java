@@ -2,7 +2,10 @@ package com.Backend.VueFrame.Services;
 
 import java.util.List;
 
+import javax.persistence.OrderBy;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -24,7 +27,7 @@ public class NavBarServices {
 	
 	
 	public List<NavBarData> getNavData() {
-		return navRepo.findAll();
+		return navRepo.findByOrderByNumberAsc();
 		
 	}
 }

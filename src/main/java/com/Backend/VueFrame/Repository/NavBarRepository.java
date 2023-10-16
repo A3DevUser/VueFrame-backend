@@ -12,4 +12,8 @@ public interface NavBarRepository extends JpaRepository<NavBarData, String> {
 
 	List<NavBarData> getByFormId(String formId);
 
+//	List<NavBarData> findByOrderByOrderByAsc();
+
+	List<NavBarData> findByOrderByNumberAsc();
+
 }
