@@ -24,6 +24,12 @@ public class NavBarData {
 	
 	@Column (name = "NAVIGATE")
 	private String navigate;
+	
+	@Column (name = "NAV_TYPE")
+	private String navType;
+	
+	@Column (name = "URL")
+	private String url;
 
 	public String getNavId() {
 		return navId;
@@ -66,19 +72,43 @@ public class NavBarData {
 	}
 
 	
-	public NavBarData(String navId, String formId, String navName, String navStoredValue, String navigate) {
+	public String getNavType() {
+		return navType;
+	}
+
+	public void setNavType(String navType) {
+		this.navType = navType;
+	}
+	
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	
+	
+	public NavBarData(String navId, String formId, String navName, String navStoredValue, String navigate,
+			String navType, String url) {
 		super();
 		this.navId = navId;
 		this.formId = formId;
 		this.navName = navName;
 		this.navStoredValue = navStoredValue;
 		this.navigate = navigate;
+		this.navType = navType;
+		this.url = url;
 	}
 
 	public NavBarData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 	
 	
 }
