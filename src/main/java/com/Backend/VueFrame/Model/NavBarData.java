@@ -34,6 +34,10 @@ public class NavBarData {
 	@Column (name = "order_number")
 	private String number;
 
+	@Column (name = "COMP_TYPE")
+	private String compType;
+	
+	
 	public String getNavId() {
 		return navId;
 	}
@@ -104,9 +108,19 @@ public class NavBarData {
 	public void setNumber(String number) {
 		this.number = number;
 	}
+	
+	public String getCompType() {
+		return compType;
+	}
+
+	public void setCompType(String compType) {
+		this.compType = compType;
+	}
+
+	
 
 	public NavBarData(String navId, String formId, String navName, String navStoredValue, String navigate,
-			String navType, String url, String number) {
+			String navType, String url, String number, String compType) {
 		super();
 		this.navId = navId;
 		this.formId = formId;
@@ -116,6 +130,7 @@ public class NavBarData {
 		this.navType = navType;
 		this.url = url;
 		this.number = number;
+		this.compType = compType;
 	}
 
 	public NavBarData() {
