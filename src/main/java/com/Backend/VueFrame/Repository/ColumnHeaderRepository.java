@@ -16,7 +16,7 @@ public interface ColumnHeaderRepository extends JpaRepository<ColumnHeaderData, 
 
 	List<ColumnHeaderData> findByOrderByNumberAsc();
 
-	List<ColumnHeaderData> getByFormIdAndGridId(String formId, String gridId);
+//	List<ColumnHeaderData> getByFormIdAndGridId(String formId);
 
 	
 

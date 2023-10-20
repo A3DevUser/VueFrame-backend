@@ -24,6 +24,9 @@ public class GridData {
 	
 	@Column(name = "SEC_ID")
 	private String secId;
+	
+	@Column(name = "FORM_ID")
+	private String formId;
 
 	public String getGridId() {
 		return gridId;
@@ -65,15 +68,24 @@ public class GridData {
 		this.secId = secId;
 	}
 
-	
+	public String getFormId() {
+		return formId;
+	}
 
-	public GridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId) {
+	public void setFormId(String formId) {
+		this.formId = formId;
+	}
+
+	
+	
+	public GridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId, String formId) {
 		super();
 		this.gridId = gridId;
 		this.gridName = gridName;
 		this.dbTableName = dbTableName;
 		this.gridTitle = gridTitle;
 		this.secId = secId;
+		this.formId = formId;
 	}
 
 	public GridData() {

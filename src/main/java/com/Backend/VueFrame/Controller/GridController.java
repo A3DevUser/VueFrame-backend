@@ -23,8 +23,8 @@ public class GridController {
 	
 	
 	@GetMapping("getByGrid")
-	public List<GridData> getGrid(@RequestParam String secId) {
+	public List<GridData> getGrid(@RequestParam String formId) {
 		
-		return gridServ.getGridData(secId);
+		return gridServ.getGridData(formId);
 	}
 }
