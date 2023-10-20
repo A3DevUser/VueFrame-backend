@@ -24,10 +24,9 @@ public class ColumnHeaderService {
 	}
 	
 	public List<ColumnHeaderData> getColumn(@RequestParam String formId, 
-			                                @RequestParam String secId,
 			                                @RequestParam String gridId) {
 		
-		return columnHeadRepo.getByFormIdAndSecIdAndGridId(formId, secId, gridId);
+		return columnHeadRepo.getByFormIdAndGridId(formId, gridId);
 	}
 	
 	
