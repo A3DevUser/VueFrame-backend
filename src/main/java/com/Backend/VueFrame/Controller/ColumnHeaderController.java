@@ -1,5 +1,6 @@
 package com.Backend.VueFrame.Controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +26,24 @@ public class ColumnHeaderController {
 	
 	@GetMapping("getcolumn")
 	public List<ColumnHeaderData> getcolumnData(@RequestParam String formId) {
+	   return columnServ.getColumnData(formId);
+	    
+	   
+	 
+}	
 		
-		return columnServ.getColumnData(formId);
-		
-	}
 	
+//	@GetMapping("getColumnOrder")
+//	public List<ColumnHeaderData> getColumnByOrder(){
+//		return columnServ.getOrderData();
+//	}
+	
+	@GetMapping("getColumnHeader")
+	public List<ColumnHeaderData> getColHead(@RequestParam String formId, 
+			                                @RequestParam String secId,
+			                                @RequestParam String gridId) {
+		return columnServ.getColumn(formId, secId, gridId);
+	}
 
+	
 }

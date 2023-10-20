@@ -37,6 +37,19 @@ public class NavBarData {
 	@Column (name = "COMP_TYPE")
 	private String compType;
 	
+	@Column(name = "is_sec_flag")
+	private String isSecFlag;
+	
+
+	public String getIsSecFlag() {
+		return isSecFlag;
+	}
+
+	public void setIsSecFlag(String isSecFlag) {
+		this.isSecFlag = isSecFlag;
+	}
+
+	
 	
 	public String getNavId() {
 		return navId;
@@ -96,11 +109,6 @@ public class NavBarData {
 		this.url = url;
 	}
 
-	
-	
-
-	
-
 	public String getNumber() {
 		return number;
 	}
@@ -119,8 +127,10 @@ public class NavBarData {
 
 	
 
+	
+
 	public NavBarData(String navId, String formId, String navName, String navStoredValue, String navigate,
-			String navType, String url, String number, String compType) {
+			String navType, String url, String number, String compType, String isSecFlag) {
 		super();
 		this.navId = navId;
 		this.formId = formId;
@@ -131,14 +141,12 @@ public class NavBarData {
 		this.url = url;
 		this.number = number;
 		this.compType = compType;
+		this.isSecFlag = isSecFlag;
 	}
 
 	public NavBarData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
 	
 }

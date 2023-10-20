@@ -12,4 +12,12 @@ public interface ColumnHeaderRepository extends JpaRepository<ColumnHeaderData, 
 
 	List<ColumnHeaderData> getByFormId(String formId);
 
+//	List<ColumnHeaderData> findByOrderByOrdByAsc();
+
+	List<ColumnHeaderData> findByOrderByNumberAsc();
+
+	List<ColumnHeaderData> getByFormIdAndSecIdAndGridId(String formId, String secId, String gridId);
+
+	
+
 }

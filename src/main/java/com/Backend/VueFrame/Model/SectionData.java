@@ -31,6 +31,7 @@ public class SectionData {
 	@Column(name = "HEIGHT")
 	private String height;
 	
+	
 	public String getSecId() {
 		return secId;
 	}
@@ -90,6 +91,9 @@ public class SectionData {
 	public void setHeight(String height) {
 		this.height = height;
 	}
+	
+
+	
 
 	public SectionData(String secId, String formId, String secName, String secStoredValue, String isOpen, String width,
 			String height) {
