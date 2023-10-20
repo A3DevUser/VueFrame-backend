@@ -38,12 +38,8 @@ public class ColumnHeaderController {
 //		return columnServ.getOrderData();
 //	}
 	
-	@GetMapping("getColumnHeader")
-	public List<ColumnHeaderData> getColHead(@RequestParam String formId, 
-			                                @RequestParam String secId,
-			                                @RequestParam String gridId) {
-		return columnServ.getColumn(formId, secId, gridId);
-	}
+	
 
+	
 	
 }
