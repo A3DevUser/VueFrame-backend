@@ -45,6 +45,12 @@ public class ColumnHeaderData {
 	
 	@Column(name = "SUB_SEC_TYPE")
 	private String subSecType;
+	
+	@Column(name = "ORDER_BY")
+	private String number;
+	
+	@Column(name = "GRID_ID")
+	private String gridId;
 
 	public String getColumnId() {
 		return columnId;
@@ -150,11 +156,31 @@ public class ColumnHeaderData {
 		this.subSecType = subSecType;
 	}
 
+
 	
 
+	public String getNumber() {
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	
+	public String getGridId() {
+		return gridId;
+	}
+
+	public void setGridId(String gridId) {
+		this.gridId = gridId;
+	}
+
+	
+	
+	
 	public ColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
 			String secId, String cellType, String width, String subSecName, String subSecId, String subSecWidth,
-			String subSecType) {
+			String subSecType, String number, String gridId) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
@@ -168,8 +194,11 @@ public class ColumnHeaderData {
 		this.subSecId = subSecId;
 		this.subSecWidth = subSecWidth;
 		this.subSecType = subSecType;
+		this.number = number;
+		this.gridId = gridId;
 	}
 
+	
 	public ColumnHeaderData() {
 		super();
 		// TODO Auto-generated constructor stub

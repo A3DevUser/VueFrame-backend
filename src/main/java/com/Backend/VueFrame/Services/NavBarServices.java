@@ -26,6 +26,7 @@ public class NavBarServices {
 	}
 	
 	
+	
 	public List<NavBarData> getNavData() {
 		return navRepo.findByOrderByNumberAsc();
 		
