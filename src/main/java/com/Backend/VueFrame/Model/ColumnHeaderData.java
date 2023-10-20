@@ -51,6 +51,8 @@ public class ColumnHeaderData {
 	
 	@Column(name = "GRID_ID")
 	private String gridId;
+	
+	
 
 	public String getColumnId() {
 		return columnId;

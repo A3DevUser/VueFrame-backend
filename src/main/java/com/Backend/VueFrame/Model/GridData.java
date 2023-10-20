@@ -27,6 +27,9 @@ public class GridData {
 	
 	@Column(name = "FORM_ID")
 	private String formId;
+	
+	@Column(name = "IS_MROW")
+	private String isMrow;
 
 	public String getGridId() {
 		return gridId;
@@ -75,10 +78,19 @@ public class GridData {
 	public void setFormId(String formId) {
 		this.formId = formId;
 	}
+	
+	public String getIsMrow() {
+		return isMrow;
+	}
+
+	public void setIsMrow(String isMrow) {
+		this.isMrow = isMrow;
+	}
 
 	
 	
-	public GridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId, String formId) {
+	public GridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId, String formId,
+			String isMrow) {
 		super();
 		this.gridId = gridId;
 		this.gridName = gridName;
@@ -86,8 +98,10 @@ public class GridData {
 		this.gridTitle = gridTitle;
 		this.secId = secId;
 		this.formId = formId;
+		this.isMrow = isMrow;
 	}
 
+	
 	public GridData() {
 		super();
 		// TODO Auto-generated constructor stub
