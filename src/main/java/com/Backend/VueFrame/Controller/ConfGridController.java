@@ -9,29 +9,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Backend.VueFrame.Model.ApiRepoData;
-import com.Backend.VueFrame.Services.ApiRepoSevices;
+import com.Backend.VueFrame.Model.ConfGridData;
+import com.Backend.VueFrame.Services.ConfGridService;
 
 @RestController
 @RequestMapping("VF/")
 @CrossOrigin(origins = "*")
-public class ApiRepoController {
-
+public class ConfGridController {
+	
 	
 	@Autowired
-	private ApiRepoSevices apiRepoServ;
+	private ConfGridService confGridServ;
 	
-	
-	@GetMapping("getApiById")
-	public List<ApiRepoData> getApi(@RequestParam String apiId, @RequestParam String formId) {
-		
-		return apiRepoServ.getApi(apiId, formId);
-		
-		
-		
+	@GetMapping("getConfSGrid")
+	public List<ConfGridData> getConfGrid(@RequestParam String formId){
+		return confGridServ.getConfGrid(formId);
 	}
-	
-	
-	
-	
+
 }

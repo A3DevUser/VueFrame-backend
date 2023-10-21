@@ -9,29 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Backend.VueFrame.Model.ApiRepoData;
-import com.Backend.VueFrame.Services.ApiRepoSevices;
+import com.Backend.VueFrame.Model.ConfSectionData;
+import com.Backend.VueFrame.Services.ConfSectionService;
 
 @RestController
 @RequestMapping("VF/")
 @CrossOrigin(origins = "*")
-public class ApiRepoController {
+public class ConfSectionController {
 
 	
 	@Autowired
-	private ApiRepoSevices apiRepoServ;
+	private ConfSectionService confSectionServ;
 	
 	
-	@GetMapping("getApiById")
-	public List<ApiRepoData> getApi(@RequestParam String apiId, @RequestParam String formId) {
-		
-		return apiRepoServ.getApi(apiId, formId);
+	@GetMapping("getConSection")
+	public List<ConfSectionData> getConfSecData (@RequestParam String formId) {
 		
 		
-		
+		return confSectionServ.getConfSection(formId); 
 	}
-	
-	
-	
-	
 }
