@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "VF_COLUMN_HEADER")
+@Table(name = "vf_conf_column_header")
 public class ConfColumnHeaderData {
 	
 	@Id
