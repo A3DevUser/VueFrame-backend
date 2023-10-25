@@ -52,6 +52,9 @@ public class ColumnHeaderData {
 	@Column(name = "GRID_ID")
 	private String gridId;
 	
+	@Column (name = "STICKY")
+	private String sticky;
+	
 	
 
 	public String getColumnId() {
@@ -177,12 +180,20 @@ public class ColumnHeaderData {
 		this.gridId = gridId;
 	}
 
+	public String getSticky() {
+		return sticky;
+	}
+
+	public void setSticky(String sticky) {
+		this.sticky = sticky;
+	}
+
 	
-	
+
 	
 	public ColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
 			String secId, String cellType, String width, String subSecName, String subSecId, String subSecWidth,
-			String subSecType, String number, String gridId) {
+			String subSecType, String number, String gridId, String sticky) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
@@ -198,9 +209,9 @@ public class ColumnHeaderData {
 		this.subSecType = subSecType;
 		this.number = number;
 		this.gridId = gridId;
+		this.sticky = sticky;
 	}
 
-	
 	public ColumnHeaderData() {
 		super();
 		// TODO Auto-generated constructor stub
