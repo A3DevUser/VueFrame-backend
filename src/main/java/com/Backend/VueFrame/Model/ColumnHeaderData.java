@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "vf_column_dummy")
+@Table(name = "vf_column_header")
 public class ColumnHeaderData {
 	
 	 @Id
