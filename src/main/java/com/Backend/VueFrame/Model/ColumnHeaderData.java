@@ -2,14 +2,22 @@ package com.Backend.VueFrame.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
-@Table(name = "VF_COLUMN_HEADER")
+@Table(name = "vf_column_header")
 public class ColumnHeaderData {
 	
-	@Id
+	 @Id
+	    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "column_id_generator")
+	    @GenericGenerator(name = "column_id_generator", strategy = "com.Backend.VueFrame.CustomIDGenerator")
+
 	@Column(name="COLUMN_ID")
 	private String columnId;
 	
