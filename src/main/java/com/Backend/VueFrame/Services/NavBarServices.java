@@ -7,6 +7,7 @@ import javax.persistence.OrderBy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Backend.VueFrame.Model.NavBarData;
@@ -30,6 +31,14 @@ public class NavBarServices {
 	public List<NavBarData> getNavData() {
 		return navRepo.findByOrderByNumberAsc();
 		
+	}
+	
+	
+	public List<NavBarData> SetNavData(@RequestBody List<NavBarData> setData) {
+		
+		List<NavBarData> list = navRepo.saveAll(setData);
+		
+		return list;
 	}
 }
 

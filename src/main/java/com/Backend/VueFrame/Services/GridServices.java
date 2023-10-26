@@ -22,4 +22,12 @@ public class GridServices {
 		
 		
 	}
+	
+	
+	public List<GridData> setGridData(@RequestParam List<GridData> setData) {
+		
+		List<GridData> list = gridRepo.saveAll(setData);
+		
+		return list;
+	}
 }

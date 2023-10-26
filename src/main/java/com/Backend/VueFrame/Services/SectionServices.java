@@ -21,5 +21,10 @@ public class SectionServices {
 	}
 
 	
-	
+	public List<SectionData> setSectionData(@RequestParam List<SectionData> setData) {
+		
+		List<SectionData> list = secRepo.saveAll(setData);
+		
+		return list;
+	}
 }

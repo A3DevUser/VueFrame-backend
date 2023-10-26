@@ -2,16 +2,24 @@ package com.Backend.VueFrame.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "VF_NAVBAR_DETAILS")
 public class NavBarData {
 	
-	@Id
+	
 	@Column(name = "NAV_ID")
 	private String navId;
+     
+@Id
+	 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "form_id_generator")
+	 @GenericGenerator(name = "form_id_generator", strategy = "com.Backend.VueFrame.CustomIDGenerator")
 
 	@Column(name = "FORM_ID")
 	private String formId;

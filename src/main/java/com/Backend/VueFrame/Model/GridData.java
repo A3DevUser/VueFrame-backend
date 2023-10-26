@@ -2,14 +2,21 @@ package com.Backend.VueFrame.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name= "VF_GRID_DETAILS")
 public class GridData {
 	
 	@Id
+	 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "grid_id_generator")
+    @GenericGenerator(name = "grid_id_generator", strategy = "com.Backend.VueFrame.CustomIDGenerator")
+
 	@Column(name="GRID_ID")
 	private String gridId;
 	
@@ -107,7 +114,7 @@ public class GridData {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+																																																																																													
 	
 	
 	
