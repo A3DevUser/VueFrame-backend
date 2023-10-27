@@ -14,9 +14,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class GridData {
 	
 	@Id
-	 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "grid_id_generator")
-    @GenericGenerator(name = "grid_id_generator", strategy = "com.Backend.VueFrame.CustomIDGenerator")
-
+//	 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "grid_id_generator")
+//    @GenericGenerator(name = "grid_id_generator", strategy = "com.Backend.VueFrame.CustomIDGenerator")
 	@Column(name="GRID_ID")
 	private String gridId;
 	
