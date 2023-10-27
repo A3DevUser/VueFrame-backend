@@ -32,6 +32,19 @@ public class ConfGridData {
 	
 	@Column(name = "IS_MROW")
 	private String isMrow;
+	
+	@Column(name = "API")
+	private String api;
+	
+	
+
+	public String getApi() {
+		return api;
+	}
+
+	public void setApi(String api) {
+		this.api = api;
+	}
 
 	public String getGridId() {
 		return gridId;
@@ -91,8 +104,10 @@ public class ConfGridData {
 
 	
 	
-	public ConfGridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId, String formId,
-			String isMrow) {
+
+	
+	public ConfGridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId,
+			String formId, String isMrow, String api) {
 		super();
 		this.gridId = gridId;
 		this.gridName = gridName;
@@ -101,9 +116,9 @@ public class ConfGridData {
 		this.secId = secId;
 		this.formId = formId;
 		this.isMrow = isMrow;
+		this.api = api;
 	}
 
-	
 	public ConfGridData() {
 		super();
 		// TODO Auto-generated constructor stub
