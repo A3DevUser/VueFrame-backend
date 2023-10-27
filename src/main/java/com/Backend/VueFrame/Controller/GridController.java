@@ -34,8 +34,12 @@ public class GridController {
 	@PostMapping("setGridData")
 	public List<GridData> setGridData(@RequestBody List<GridData> setData) {
 		
+		
 		List<GridData> list = gridServ.setGridData(setData);
+		
 		
 		return list;
 	}
+	
+	
 }

@@ -30,7 +30,7 @@ public class CustomIDGenerator implements IdentifierGenerator {
 	    } else if (obj instanceof NavBarData) {
 	        // Logic to generate a unique ID for navbars with the prefix "f-"
 	        String sequenceValue = ((Number) session.createNativeQuery("SELECT FORM_ID_SEQUENCE.NEXTVAL FROM DUAL").uniqueResult()).toString();
-	        return "FORM-" + sequenceValue;
+	        return "N-" + sequenceValue;
 	    } else {
 	        // Handle other cases or throw an exception if needed
 	        throw new UnsupportedOperationException("Unsupported entity type for ID generation");
