@@ -37,7 +37,6 @@ public class ConfGridData {
 	private String api;
 	
 	
-
 	public String getApi() {
 		return api;
 	}
