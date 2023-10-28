@@ -36,6 +36,9 @@ public class GridData {
 	
 	@Column(name = "IS_MROW")
 	private String isMrow;
+	
+	@Column(name = "is_main")
+	private String isMain;
 
 	public String getGridId() {
 		return gridId;
@@ -95,8 +98,19 @@ public class GridData {
 
 	
 	
+	public String getIsMain() {
+		return isMain;
+	}
+
+	public void setIsMain(String isMain) {
+		this.isMain = isMain;
+	}
+
+	
+
+	
 	public GridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId, String formId,
-			String isMrow) {
+			String isMrow, String isMain) {
 		super();
 		this.gridId = gridId;
 		this.gridName = gridName;
@@ -105,9 +119,9 @@ public class GridData {
 		this.secId = secId;
 		this.formId = formId;
 		this.isMrow = isMrow;
+		this.isMain = isMain;
 	}
 
-	
 	public GridData() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -28,17 +28,14 @@ public class ColumnHeaderController {
 	
 	@GetMapping("getcolumn")
 	public List<ColumnHeaderData> getcolumnData(@RequestParam String formId) {
-	   return columnServ.getColumnData(formId);
-	    
-	   
-	 
+	   return columnServ.getColumnData(formId); 
 }	
 		
 	
 //	@GetMapping("getColumnOrder")
 //	public List<ColumnHeaderData> getColumnByOrder(){
 //		return columnServ.getOrderData();
-//	}
+//	} 
 	
 	
 	@PostMapping("setColumnHead") 
@@ -47,8 +44,11 @@ public class ColumnHeaderController {
 		List<ColumnHeaderData> list = columnServ.SetColumnData(setData);
 		
 		return list;
+
 	}
 
+	
+	
 	
 	
 }
