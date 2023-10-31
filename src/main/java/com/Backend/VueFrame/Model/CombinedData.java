@@ -10,7 +10,11 @@ public class CombinedData {
         this.gridData = gridData;
     }
 
-    public List<NavBarData> getNavBarData() {
+    public CombinedData() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public List<NavBarData> getNavBarData() {
         return navBarData;
     }
 

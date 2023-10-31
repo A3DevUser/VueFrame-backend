@@ -85,12 +85,13 @@ public class ConfigurationFomrService {
 		}
      
       //Set SectionId in Section Table
-      public void setSectionId(HashMap<String, String> sectionMap) {
-          for (String secName : sectionMap.keySet()) {
-              String nextValue = sectionRepo.setSectionSequence();
-              sectionMap.put(secName, nextValue);
-          }
-      }
+	    public SectionData setSectionId(@RequestBody SectionData setData) {
+		    String seq = sectionRepo.setSectionSequence();
+		    String formattedSecId = "S-" + seq;
+		    setData.setSecId(formattedSecId);
+		    return setData;
+		}
+	    
       
       
       
@@ -104,6 +105,18 @@ public class ConfigurationFomrService {
   	}
       
       //setColumnId in Column Data Table
+      
+      
+      
+      
+      
+      
+      public ColumnHeaderData setColumnId(@RequestBody ColumnHeaderData setData) {
+  	    String seq = columnRepo.setColumnSequence();
+  	    String formattedColumnId = "COL-" + seq;
+  	    setData.setFormId(formattedColumnId);
+  	    return setData;
+  	}
       
       public String setColumnId() {
     	  return columnRepo.setColumnSequence();

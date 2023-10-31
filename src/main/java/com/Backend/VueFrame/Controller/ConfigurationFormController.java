@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Backend.VueFrame.Model.ColumnHeaderData;
 import com.Backend.VueFrame.Model.CombinedData;
+import com.Backend.VueFrame.Model.CombinedObject;
 import com.Backend.VueFrame.Model.CombinedResultDTO;
 import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.NavBarData;
@@ -29,35 +30,54 @@ public class ConfigurationFormController {
 	
 
 	    @Autowired
-	    private ConfigurationFomrService ConfService;
+	    private ConfigurationFomrService confService;
 	   
 
 	    @PostMapping("postConfigData")
-	    public ResponseEntity<String> configureAll(@RequestBody CombinedData combinedData) {
-	        // Call the service method to set the FormId for each NavBarData object
-	        for (NavBarData navData : combinedData.getNavBarData()) {
-	            ConfService.setFormId(navData);
+	    public ResponseEntity<List<CombinedObject>> configureAll(@RequestBody List<CombinedObject> combinedObjectList) {
+	        List<NavBarData> navBarDataList = new ArrayList<>();
+	        List<GridData> gridDataList = new ArrayList<>();
+
+	        
+	        for (CombinedObject combinedObject : combinedObjectList) {
+	            if (combinedObject.getNavName() != null) {
+	                // Create a new NavBarData instance
+	                NavBarData navBarData = new NavBarData();
+	                confService.setFormId(navBarData);
+	                navBarData.setNavName(combinedObject.getNavName());
+	                navBarData.setNavStoredValue(combinedObject.getNavStoredValue());
+	                navBarData.setNavigate(combinedObject.getNavigate());
+	                // Set other NavBarData fields as needed
+
+	                // Set the formId for NavBarData
+
+	                // Add the NavBarData instance to the list
+	                navBarDataList.add(navBarData);
+	            } else if (combinedObject.getGridName() != null) {
+	                // Create a new GridData instance
+	            	
+	                GridData gridData = new GridData();
+	                confService.setGridId(gridData);
+	                gridData.setGridName(combinedObject.getGridName());
+	                gridData.setDbTableName(combinedObject.getDbTableName());
+	                gridData.setIsMain(combinedObject.getIsMain());
+	                // Set other GridData fields as needed
+
+	                // Set the gridId for GridData
+
+	                // Add the GridData instance to the list
+	                gridDataList.add(gridData);
+	            }
 	        }
 
-	        // Call the service method to save the updated NavBarData objects
-	        List<NavBarData> updatedNavDataList = ConfService.SetNavData(combinedData.getNavBarData());
+	        // Save the lists of NavBarData and GridData instances
+	        List<NavBarData> updatedNavDataList = confService.SetNavData(navBarDataList);
+	        List<GridData> savedGridDataList = confService.setGridData(gridDataList);
 
-	        // Call the setGridId method for each GridData object
-	        for (GridData gridData : combinedData.getGridData()) {
-	            ConfService.setGridId(gridData);
-	        }
-
-	        // Call the setGridData method to save the grid data
-	        List<GridData> savedGridDataList = ConfService.setGridData(combinedData.getGridData());
-
-	        // Perform additional operations if needed
-
-	        return ResponseEntity.ok("All configurations have been completed.");
+	        // You may want to return a response if needed
+	        return ResponseEntity.ok(combinedObjectList);
 	    }
 
-
-	    
-	    
 
 	
 }
