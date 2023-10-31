@@ -3,6 +3,7 @@ package com.Backend.VueFrame.Controller;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.catalina.realm.CombinedRealm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.NavBarData;
 import com.Backend.VueFrame.Model.SectionData;
 import com.Backend.VueFrame.Services.ConfigurationFomrService;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 
 
 @RestController
@@ -34,16 +36,17 @@ public class ConfigurationFormController {
 	   
 
 	    @PostMapping("postConfigData")
-	    public ResponseEntity<List<CombinedObject>> configureAll(@RequestBody List<CombinedObject> combinedObjectList) {
+	    public Object configureAll(@RequestBody List<CombinedObject> combinedObjectList) {
 	        List<NavBarData> navBarDataList = new ArrayList<>();
 	        List<GridData> gridDataList = new ArrayList<>();
-
+	        Map<String,Object> obj = new HashMap<>();
 	        
 	        for (CombinedObject combinedObject : combinedObjectList) {
-	            if (combinedObject.getNavName() != null) {
+	          
 	                // Create a new NavBarData instance
 	                NavBarData navBarData = new NavBarData();
-	                confService.setFormId(navBarData);
+	                confService.setFormId(navBarData);	              
+	                obj.put("formId",navBarData.getFormId());
 	                navBarData.setNavName(combinedObject.getNavName());
 	                navBarData.setNavStoredValue(combinedObject.getNavStoredValue());
 	                navBarData.setNavigate(combinedObject.getNavigate());
@@ -53,11 +56,11 @@ public class ConfigurationFormController {
 
 	                // Add the NavBarData instance to the list
 	                navBarDataList.add(navBarData);
-	            } else if (combinedObject.getGridName() != null) {
 	                // Create a new GridData instance
 	            	
 	                GridData gridData = new GridData();
 	                confService.setGridId(gridData);
+	                obj.put("gridId",gridData.getGridId());
 	                gridData.setGridName(combinedObject.getGridName());
 	                gridData.setDbTableName(combinedObject.getDbTableName());
 	                gridData.setIsMain(combinedObject.getIsMain());
@@ -68,18 +71,69 @@ public class ConfigurationFormController {
 	                // Add the GridData instance to the list
 	                gridDataList.add(gridData);
 	            }
-	        }
+	        
 
 	        // Save the lists of NavBarData and GridData instances
 	        List<NavBarData> updatedNavDataList = confService.SetNavData(navBarDataList);
 	        List<GridData> savedGridDataList = confService.setGridData(gridDataList);
 
 	        // You may want to return a response if needed
-	        return ResponseEntity.ok(combinedObjectList);
+//	        List<String,String> Op = new List();
+	        return ResponseEntity.ok(obj);
 	    }
 
+	    
+	    //Section Config Api
+	    @PostMapping("postSectionData")
+	    public Object getSecData(@RequestBody List<SectionData> secData) {
+	    	
+	        Map<String,Object> obj = new HashMap<>();
 
+	    	
+	    	for (SectionData sec :  secData) {
+	    		confService.setSectionId(sec);
+	            obj.put("secId",sec.getSecId());
+
+	    	}
+	    	
+
+	    	List<SectionData> list = confService.setSectionData(secData);
+	  		
+	  		return obj;
+	    }
+
+	    
+	    @PostMapping("postGridData")
+	    public Object getGridData(@RequestBody List<GridData> gridData) {
+	    	
+	    	
+	        Map<String,Object> obj = new HashMap<>();
+
+	    	for (GridData grid :  gridData) {
+	    		confService.setGridId(grid);
+	            obj.put("gridId",grid.getGridId());
+
+	    	}
+	    	List<GridData> list = confService.setGridData(gridData);
+	  		
+	  		return obj;
+	    }
 	
+	    @PostMapping("postColumnData")
+	    public Object getColumnData(@RequestBody List<ColumnHeaderData> columnData) {
+	    	
+	        Map<String,Object> obj = new HashMap<>();
+
+	    	for (ColumnHeaderData column :  columnData) {
+	    		confService.setColumnId(column);
+	            obj.put("columnId",column.getColumnId());
+
+	    	}
+	    	List<ColumnHeaderData> list = confService.SetColumnData(columnData);
+	  		
+	  		return obj;
+	    }
+
 }
 
 

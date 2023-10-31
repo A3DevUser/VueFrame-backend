@@ -114,7 +114,7 @@ public class ConfigurationFomrService {
       public ColumnHeaderData setColumnId(@RequestBody ColumnHeaderData setData) {
   	    String seq = columnRepo.setColumnSequence();
   	    String formattedColumnId = "COL-" + seq;
-  	    setData.setFormId(formattedColumnId);
+  	    setData.setColumnId(formattedColumnId);
   	    return setData;
   	}
       

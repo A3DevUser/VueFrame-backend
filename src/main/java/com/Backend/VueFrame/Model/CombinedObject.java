@@ -2,19 +2,14 @@ package com.Backend.VueFrame.Model;
 
 public class CombinedObject {
 	
-	private String fromId;
 	private String navName;
 	private String navStoredValue;
 	private String navigate;
 	private String gridName;
 	private String dbTableName;
 	private String isMain;
-	public String getFromId() {
-		return fromId;
-	}
-	public void setFromId(String fromId) {
-		this.fromId = fromId;
-	}
+	
+	
 	public String getNavName() {
 		return navName;
 	}
@@ -51,10 +46,9 @@ public class CombinedObject {
 	public void setIsMain(String isMain) {
 		this.isMain = isMain;
 	}
-	public CombinedObject(String fromId, String navName, String navStoredValue, String navigate, String gridName,
+	public CombinedObject(String navName, String navStoredValue, String navigate, String gridName,
 			String dbTableName, String isMain) {
 		super();
-		this.fromId = fromId;
 		this.navName = navName;
 		this.navStoredValue = navStoredValue;
 		this.navigate = navigate;
