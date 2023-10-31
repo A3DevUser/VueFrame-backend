@@ -1,7 +1,6 @@
 package com.Backend.VueFrame.Controller;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Backend.VueFrame.Model.ColumnHeaderData;
+import com.Backend.VueFrame.Model.CombinedData;
 import com.Backend.VueFrame.Model.CombinedResultDTO;
 import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.NavBarData;
@@ -33,25 +33,29 @@ public class ConfigurationFormController {
 	   
 
 	    @PostMapping("postConfigData")
-	    public ResponseEntity<String> configureAll(
-	            @RequestBody List<NavBarData> navBarDataList,
-	            @RequestBody List<GridData> gridDataList
-	        ) {
-	            // Call the service method to set the FormId for each NavBarData object
-	            for (NavBarData navData : navBarDataList) {
-	            	ConfService.setFormId(navData);
-	            }
-
-	            // Call the service method to set the grid ID and save grid data
-	            for (GridData gridData : gridDataList) {
-	                GridData updatedGridData = ConfService.setGridId(gridData);
-	                List<GridData> savedGridDataList = ConfService.setGridData(Collections.singletonList(updatedGridData));
-	            }
-
-	            // Perform additional operations if needed
-
-	            return ResponseEntity.ok("All configurations have been completed.");
+	    public ResponseEntity<String> configureAll(@RequestBody CombinedData combinedData) {
+	        // Call the service method to set the FormId for each NavBarData object
+	        for (NavBarData navData : combinedData.getNavBarData()) {
+	            ConfService.setFormId(navData);
 	        }
+
+	        // Call the service method to save the updated NavBarData objects
+	        List<NavBarData> updatedNavDataList = ConfService.SetNavData(combinedData.getNavBarData());
+
+	        // Call the setGridId method for each GridData object
+	        for (GridData gridData : combinedData.getGridData()) {
+	            ConfService.setGridId(gridData);
+	        }
+
+	        // Call the setGridData method to save the grid data
+	        List<GridData> savedGridDataList = ConfService.setGridData(combinedData.getGridData());
+
+	        // Perform additional operations if needed
+
+	        return ResponseEntity.ok("All configurations have been completed.");
+	    }
+
+
 	    
 	    
 
