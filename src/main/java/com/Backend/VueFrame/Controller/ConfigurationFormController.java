@@ -1,6 +1,7 @@
 package com.Backend.VueFrame.Controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -32,19 +33,27 @@ public class ConfigurationFormController {
 	   
 
 	    @PostMapping("postConfigData")
-	    public ResponseEntity<String> configureAll(@RequestBody List<NavBarData> setData) {
-	        // Call the service method to set the FormId for each NavBarData object
-	        for (NavBarData navData : setData) {
-	        	ConfService.setFormId(navData);
+	    public ResponseEntity<String> configureAll(
+	            @RequestBody List<NavBarData> navBarDataList,
+	            @RequestBody List<GridData> gridDataList
+	        ) {
+	            // Call the service method to set the FormId for each NavBarData object
+	            for (NavBarData navData : navBarDataList) {
+	            	ConfService.setFormId(navData);
+	            }
+
+	            // Call the service method to set the grid ID and save grid data
+	            for (GridData gridData : gridDataList) {
+	                GridData updatedGridData = ConfService.setGridId(gridData);
+	                List<GridData> savedGridDataList = ConfService.setGridData(Collections.singletonList(updatedGridData));
+	            }
+
+	            // Perform additional operations if needed
+
+	            return ResponseEntity.ok("All configurations have been completed.");
 	        }
-
-	        // Call the service method to save the updated NavBarData objects
-	        List<NavBarData> updatedNavDataList = ConfService.SetNavData(setData);
-
-	        // Perform additional operations if needed
-
-	        return ResponseEntity.ok("All configurations have been completed.");
-	    }
+	    
+	    
 
 	
 }

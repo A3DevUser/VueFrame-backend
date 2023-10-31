@@ -38,9 +38,10 @@ public class ConfigurationFomrService {
 	
 	//Generate FomrId
 	public NavBarData setFormId(@RequestBody NavBarData setData) {
-		String seq = navRepo.setFormIdSequence();
-		setData.setFormId(seq);
-		return setData;
+	    String seq = navRepo.setFormIdSequence();
+	    String formattedFormId = "FORM-" + seq;
+	    setData.setFormId(formattedFormId);
+	    return setData;
 	}
 	
 	 //Set Nav/Form Data in NavaBar Table
@@ -60,19 +61,28 @@ public class ConfigurationFomrService {
 //	
 	 //Set GridId in Grid Table
     
-    public void setGridId(HashMap<String, String> gridMap) {
-  	  for(String gridName : gridMap.keySet()) {
-  		  String nextValue = gridRepo.setGridSequence();
-  		  gridMap.put(gridName, nextValue);
-  	  }
-    }
-    //set Grid Data in GridTable
-    public List<GridData> setGridData(@RequestParam List<GridData> setData) {
-		
-		List<GridData> list = gridRepo.saveAll(setData);
-		
-		return list;
+    public GridData setGridId(@RequestBody GridData setData) {
+	    String seq = gridRepo.setGridSequence();
+	    String formattedGridId = "GID-" + seq;
+	    setData.setGridId(formattedGridId);
+	    return setData;
 	}
+    
+    
+//    public void setGridId(HashMap<String, String> gridMap) {
+//        for (String gridName : gridMap.keySet()) {
+//            String nextValue = gridRepo.setGridSequence();
+//            String formattedGridId = "GID-" + nextValue; // Customize the prefix as needed
+//            gridMap.put(gridName, formattedGridId);
+//        }
+//    }
+    //set Grid Data in GridTable
+	    public List<GridData> setGridData(@RequestParam List<GridData> setData) {
+			
+			List<GridData> list = gridRepo.saveAll(setData);
+			
+			return list;
+		}
      
       //Set SectionId in Section Table
       public void setSectionId(HashMap<String, String> sectionMap) {
@@ -108,10 +118,6 @@ public class ConfigurationFomrService {
   	}
 
           
-      
-      
-      
-      
 	
 	}
 	
