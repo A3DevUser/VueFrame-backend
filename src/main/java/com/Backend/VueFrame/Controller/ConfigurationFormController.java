@@ -94,6 +94,7 @@ public class ConfigurationFormController {
 	    	for (SectionData sec :  secData) {
 	    		confService.setSectionId(sec);
 	            obj.put("secId",sec.getSecId());
+	            obj.put("formId", sec.getFormId());
 
 	    	}
 	    	
