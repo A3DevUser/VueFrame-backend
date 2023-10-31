@@ -13,14 +13,12 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "VF_NAVBAR_DETAILS")
 public class NavBarData {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "form_id_generator")
-	@GenericGenerator(name = "form_id_generator", strategy = "com.Backend.VueFrame.CustomIDGenerator")
+	
 	@Column(name = "NAV_ID")
 	private String navId;
      
     
-	
+	@Id
 	 @Column(name = "FORM_ID")
 	 private String formId;
 	
