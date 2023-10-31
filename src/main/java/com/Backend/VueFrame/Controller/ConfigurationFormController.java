@@ -61,6 +61,7 @@ public class ConfigurationFormController {
 	                GridData gridData = new GridData();
 	                confService.setGridId(gridData);
 	                obj.put("gridId",gridData.getGridId());
+	                gridData.setFormId(navBarData.getFormId());
 	                gridData.setGridName(combinedObject.getGridName());
 	                gridData.setDbTableName(combinedObject.getDbTableName());
 	                gridData.setIsMain(combinedObject.getIsMain());
@@ -127,12 +128,14 @@ public class ConfigurationFormController {
 	    	for (ColumnHeaderData column :  columnData) {
 	    		confService.setColumnId(column);
 	            obj.put("columnId",column.getColumnId());
+	            obj.put("formId", column.getFormId());
 
 	    	}
 	    	List<ColumnHeaderData> list = confService.SetColumnData(columnData);
 	  		
 	  		return obj;
 	    }
+	    
 
 }
 
