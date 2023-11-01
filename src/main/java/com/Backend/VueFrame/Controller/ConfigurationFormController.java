@@ -61,6 +61,7 @@ public class ConfigurationFormController {
 	                GridData gridData = new GridData();
 	                confService.setGridId(gridData);
 	                obj.put("gridId",gridData.getGridId());
+	                gridData.setFormId(navBarData.getFormId());
 	                gridData.setGridName(combinedObject.getGridName());
 	                gridData.setDbTableName(combinedObject.getDbTableName());
 	                gridData.setIsMain(combinedObject.getIsMain());
@@ -87,12 +88,14 @@ public class ConfigurationFormController {
 	    @PostMapping("postSectionData")
 	    public Object getSecData(@RequestBody List<SectionData> secData) {
 	    	
-	        Map<String,Object> obj = new HashMap<>();
+	        Map<String,Object> obj = new HashMap<>( 
+	        		);
 
 	    	
 	    	for (SectionData sec :  secData) {
 	    		confService.setSectionId(sec);
 	            obj.put("secId",sec.getSecId());
+	            obj.put("formId", sec.getFormId());
 
 	    	}
 	    	
@@ -127,12 +130,14 @@ public class ConfigurationFormController {
 	    	for (ColumnHeaderData column :  columnData) {
 	    		confService.setColumnId(column);
 	            obj.put("columnId",column.getColumnId());
+	            obj.put("formId", column.getFormId());
 
 	    	}
 	    	List<ColumnHeaderData> list = confService.SetColumnData(columnData);
 	  		
 	  		return obj;
 	    }
+	    
 
 }
 

@@ -33,6 +33,9 @@ public class ConfSectionData {
 		@Column(name = "HEIGHT")
 		private String height;
 		
+		@Column(name = "API")
+		private String api;
+		
 		
 		public String getSecId() {
 			return secId;
@@ -94,8 +97,20 @@ public class ConfSectionData {
 			this.height = height;
 		}
 
+		
+		
+		public String getApi() {
+			return api;
+		}
+
+		public void setApi(String api) {
+			this.api = api;
+		}
+
+		
+
 		public ConfSectionData(String secId, String formId, String secName, String secStoredValue, String isOpen,
-				String width, String height) {
+				String width, String height, String api) {
 			super();
 			this.secId = secId;
 			this.formId = formId;
@@ -104,6 +119,7 @@ public class ConfSectionData {
 			this.isOpen = isOpen;
 			this.width = width;
 			this.height = height;
+			this.api = api;
 		}
 
 		public ConfSectionData() {
