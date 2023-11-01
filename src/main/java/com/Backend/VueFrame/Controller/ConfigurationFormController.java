@@ -88,7 +88,8 @@ public class ConfigurationFormController {
 	    @PostMapping("postSectionData")
 	    public Object getSecData(@RequestBody List<SectionData> secData) {
 	    	
-	        Map<String,Object> obj = new HashMap<>();
+	        Map<String,Object> obj = new HashMap<>( 
+	        		);
 
 	    	
 	    	for (SectionData sec :  secData) {

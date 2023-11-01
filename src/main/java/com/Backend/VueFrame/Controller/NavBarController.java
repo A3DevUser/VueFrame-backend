@@ -53,4 +53,13 @@ public class NavBarController {
 
 	}
 	
+	@GetMapping("getNavEle2")
+	public List<NavBarData> getNav() {
+		
+		
+		return navServ.getNavData();
+		
+		
+	}
+	
 }
