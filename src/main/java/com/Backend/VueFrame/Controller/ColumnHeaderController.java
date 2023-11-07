@@ -52,11 +52,7 @@ public class ColumnHeaderController {
 		return columnServ.getlistofColumns(formId,emd); 
 	}
 
-	
-    @GetMapping("getcol")
-    public List<ColumnHeaderData> getlistofColumns(@RequestParam String formId, @RequestParam String emd){
-                    return columnServ.getlistofColumns(formId,emd); 
-    }
+
 
 	
 	
