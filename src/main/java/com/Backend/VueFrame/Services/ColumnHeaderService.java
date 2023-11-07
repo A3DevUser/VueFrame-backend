@@ -38,12 +38,21 @@ public class ColumnHeaderService {
 	}
 
 	
+<<<<<<< HEAD
     public List<ColumnHeaderData> getlistofColumns(@RequestParam String formId,@RequestParam  String emd) {
         
         return columnHeadRepo.getlistofColumns(formId,emd);
         //return null;
 }    
 
+=======
+	public List<ColumnHeaderData> getlistofColumns(@RequestParam String formId,@RequestParam  String emd) {
+		
+		return columnHeadRepo.getlistofColumns(formId,emd);
+		//return null;
+	}	
+		
+>>>>>>> 80be5b1accdbd59c0bbb09f874da0cda65d7bc72
 //
 
 	

@@ -25,6 +25,7 @@ public interface ColumnHeaderRepository extends JpaRepository<ColumnHeaderData, 
 	
 	
 	@Query(value = "select FORM_ID, COLUMN_ID, COLUMN_NAME, \r\n"
+<<<<<<< HEAD
             + "COLUMN_STORED_VALUE, \r\n"
             + "COLUMN_FILTER_TYPE, \r\n"
             + "SEC_ID,DECODE(:emd,'yes',CELL_TYPE,'add',CELL_TYPE,'no',null,null) as CELL_TYPE,\r\n"
@@ -43,6 +44,25 @@ public interface ColumnHeaderRepository extends JpaRepository<ColumnHeaderData, 
             + "and CELL_TYPE = 'modalBtn'", nativeQuery = true)
 List<ColumnHeaderData> getlistofColumns(@Param("formId") String formId, @Param("emd") String gridId);                
 
+=======
+			+ "COLUMN_STORED_VALUE, \r\n"
+			+ "COLUMN_FILTER_TYPE, \r\n"
+			+ "SEC_ID,DECODE(:emd,'yes',CELL_TYPE,'add',CELL_TYPE,'no',null,null) as CELL_TYPE,\r\n"
+			+ "WIDTH, SUB_SEC_ID, SUB_SEC_NAME, SUB_SEC_WIDTH, \r\n"
+			+ "SUB_SEC_TYPE, ORDER_BY, CATEGORY_ID, GRID_ID, STICKY\r\n"
+			+ "from vf_column_header where FORM_ID = :formId\r\n"
+			+ "and (CELL_TYPE not like ('modalBtn') or CELL_TYPE is null)\r\n"
+			+ "union\r\n"
+			+ "select FORM_ID, COLUMN_ID, COLUMN_NAME, \r\n"
+			+ "COLUMN_STORED_VALUE, \r\n"
+			+ "COLUMN_FILTER_TYPE, \r\n"
+			+ "SEC_ID, CELL_TYPE, WIDTH, \r\n"
+			+ "SUB_SEC_ID, SUB_SEC_NAME, SUB_SEC_WIDTH, \r\n"
+			+ "SUB_SEC_TYPE, ORDER_BY, CATEGORY_ID, GRID_ID, STICKY\r\n"
+			+ "from vf_column_header where FORM_ID = :formId\r\n"
+			+ "and CELL_TYPE = 'modalBtn'", nativeQuery = true)
+	List<ColumnHeaderData> getlistofColumns(@Param("formId") String formId, @Param("emd") String gridId);	
+>>>>>>> 80be5b1accdbd59c0bbb09f874da0cda65d7bc72
 
 	
 
