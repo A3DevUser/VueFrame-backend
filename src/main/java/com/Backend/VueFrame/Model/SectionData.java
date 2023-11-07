@@ -58,8 +58,8 @@ public class SectionData {
 		return secName;
 	}
 
-	public void setSecName(String secName) {
-		this.secName = secName;
+	public String setSecName(String secName) {
+		return this.secName = secName;
 	}
 
 	public String getSecStoredValue() {

@@ -48,6 +48,12 @@ public class ColumnHeaderController {
 	}
 
 	
+    @GetMapping("getcol")
+    public List<ColumnHeaderData> getlistofColumns(@RequestParam String formId, @RequestParam String emd){
+                    return columnServ.getlistofColumns(formId,emd); 
+    }
+
+	
 	
 	
 	

@@ -1,0 +1,19 @@
+package com.Backend.VueFrame.Repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.Backend.VueFrame.Model.WorkflowData;
+
+public interface WorkflowRepository extends JpaRepository<WorkflowData, String> {
+
+	List<WorkflowData> getByFormId(String formId);
+	
+	
+	   @Query(value = "CALL WF_PACKAGE.VF_WORKFLOW_PROCEDURE(:jsonData)", nativeQuery = true)
+	    void callWorkflowProcedure(String jsonData);
+	
+	
+}

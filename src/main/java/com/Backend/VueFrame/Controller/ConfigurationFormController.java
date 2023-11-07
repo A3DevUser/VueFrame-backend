@@ -88,40 +88,37 @@ public class ConfigurationFormController {
 	    @PostMapping("postSectionData")
 	    public Object getSecData(@RequestBody List<SectionData> secData) {
 	    	
-	        Map<String,Object> obj = new HashMap<>( 
-	        		);
+	        Map<String,Object> obj = new HashMap<>();
+//    		HashMap<String, S> val = new HashMap<>();
+
 
 	    	
 	    	for (SectionData sec :  secData) {
 	    		confService.setSectionId(sec);
 	            obj.put("secId",sec.getSecId());
 	            obj.put("formId", sec.getFormId());
-
+//	            val.put("secId", sec.setSecName(sec.getSecId()));
 	    	}
-	    	
-
 	    	List<SectionData> list = confService.setSectionData(secData);
-	  		
 	  		return obj;
 	    }
+	    
+	    
+	    
 
 	    
 	    @PostMapping("postGridData")
 	    public Object getGridData(@RequestBody List<GridData> gridData) {
-	    	
-	    	
 	        Map<String,Object> obj = new HashMap<>();
-
 	    	for (GridData grid :  gridData) {
 	    		confService.setGridId(grid);
 	            obj.put("gridId",grid.getGridId());
-
 	    	}
 	    	List<GridData> list = confService.setGridData(gridData);
-	  		
 	  		return obj;
 	    }
 	
+	    
 	    @PostMapping("postColumnData")
 	    public Object getColumnData(@RequestBody List<ColumnHeaderData> columnData) {
 	    	
