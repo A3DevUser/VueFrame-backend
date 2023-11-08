@@ -95,7 +95,7 @@ public class ConfigurationFormController {
 	    	
 	    	for (SectionData sec :  secData) {
 	    		confService.setSectionId(sec);
-	            obj.put("secId",sec.getSecId());
+//	            obj.put("secId",sec.getSecId());
 	            obj.put("formId", sec.getFormId());
 //	            val.put("secId", sec.setSecName(sec.getSecId()));
 	    	}
@@ -112,7 +112,7 @@ public class ConfigurationFormController {
 	        Map<String,Object> obj = new HashMap<>();
 	    	for (GridData grid :  gridData) {
 	    		confService.setGridId(grid);
-	            obj.put("gridId",grid.getGridId());
+	            obj.put("fromId",grid.getFormId());
 	    	}
 	    	List<GridData> list = confService.setGridData(gridData);
 	  		return obj;
@@ -126,7 +126,7 @@ public class ConfigurationFormController {
 
 	    	for (ColumnHeaderData column :  columnData) {
 	    		confService.setColumnId(column);
-	            obj.put("columnId",column.getColumnId());
+//	            obj.put("columnId",column.getColumnId());
 	            obj.put("formId", column.getFormId());
 
 	    	}
