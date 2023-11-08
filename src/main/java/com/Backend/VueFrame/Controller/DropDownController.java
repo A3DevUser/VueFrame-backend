@@ -20,7 +20,7 @@ public class DropDownController {
 	private DropDownServices eDropServ;
 	
 	//For getting list of the parameter as a json object for execution of Dropdown
-	@GetMapping("dropdown")
+	@GetMapping("DropData1")
 	public String getdropdownCol(@RequestParam String formId, @RequestParam String colId,
 			@RequestParam String gridId) {
 		
@@ -51,4 +51,15 @@ public class DropDownController {
 		String dropJson = eDropServ.getDataByColDtlServ(jsonDrop);
 		return dropJson;
 	}
+	
+	//Final Main Proc, Other end points not required
+	@GetMapping("dropdown")
+	public String getddData(@RequestParam String formId, @RequestParam String colId,
+			@RequestParam String gridId,@RequestParam String jsonDrop) {
+		String jsonDataSD = eDropServ.getDropDown(formId,colId,gridId,jsonDrop);
+		return jsonDataSD;
+		
+	}
+	
+	
 }

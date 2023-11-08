@@ -39,5 +39,12 @@ public class DropDownServices {
 		query_out =  eDropRepo.getDataByColDtls(queryData);
 		return query_out;
 	}
+
+
+	public String getDropDown(String formId, String colId, String gridId, String jsonDrop) {
+		String query_out = "";
+		query_out =  eDropRepo.getDDDataRep(formId,colId,gridId,jsonDrop);
+		return query_out;
+	}
 	
 }
