@@ -20,10 +20,10 @@ public class SubSectionController {
 	@Autowired
 	private SubSectionService subSecServ;
 	
-	@GetMapping("getSubSection")
-	public List<SubSectionDetails> getSub(@RequestParam String formId) {
-		
-		return subSecServ.getSubSec(formId);
-	}
+//	@GetMapping("getSubSection")
+//	public List<SubSectionDetails> getSub(@RequestParam String formId) {
+//		
+//		return subSecServ.getSubSec(formId);
+//	}
 
 }

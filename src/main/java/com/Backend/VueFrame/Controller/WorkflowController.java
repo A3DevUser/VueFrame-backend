@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Backend.VueFrame.Model.FormData;
 import com.Backend.VueFrame.Model.WorkflowData;
 import com.Backend.VueFrame.Services.WorkflowService;
 
@@ -30,9 +31,16 @@ public class WorkflowController {
 	}
 	
 	
-	@PostMapping("callWorkflowProcedure")
-    public void callWorkflowProcedure(@RequestBody String jsonData) {
-		workFlowServ.callWorkflowProcedure(jsonData);
-
-    }
+//	@PostMapping("callWorkflowProcedure")
+//    public void callWorkflowProcedure(@RequestBody String jsonData) {
+//		workFlowServ.callWorkflowProcedure(jsonData);
+//S
+//    }
+//	
+	
+	 @PostMapping("callWorkflowProcedure")
+	 public String insertData(@RequestBody String json) {
+		 workFlowServ.callInsertDataFromDynamicJsonArray(json);
+		 return json;
+	    }
 }

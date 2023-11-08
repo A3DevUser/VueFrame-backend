@@ -24,7 +24,7 @@ public class DropDownController {
 	public String getdropdownCol(@RequestParam String formId, @RequestParam String colId,
 			@RequestParam String gridId) {
 		
-		String dropJson = eDropServ.getdropdownCol(formId, colId, gridId);
+	String dropJson = eDropServ.getdropdownCol(formId, colId, gridId);
 		return dropJson;
 	}
 	

@@ -21,9 +21,9 @@ public class ButtonController {
 	@Autowired
 	private ButtonServices btnServ;
 	
-	@GetMapping("getBtn")
-	public List<ButtonData> getData(@RequestParam String formId) {
-		return btnServ.getButtonData(formId);
-	}
+//	@GetMapping("getBtn")
+//	public List<ButtonData> getData(@RequestParam String formId) {
+//		return btnServ.getButtonData(formId);
+//	}
 
 }
