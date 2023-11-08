@@ -1,6 +1,10 @@
 package com.Backend.VueFrame.Controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.util.Base64.Decoder;
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Backend.VueFrame.Model.DropDownData;
 import com.Backend.VueFrame.Services.DropDownServices;
 
+
 @RequestMapping("VF/")
 @CrossOrigin(origins = "*")
 @RestController
@@ -20,7 +25,7 @@ public class DropDownController {
 	private DropDownServices eDropServ;
 	
 	//For getting list of the parameter as a json object for execution of Dropdown
-	@GetMapping("dropdown")
+	@GetMapping("DropData1")
 	public String getdropdownCol(@RequestParam String formId, @RequestParam String colId,
 			@RequestParam String gridId) {
 		
@@ -51,4 +56,16 @@ public class DropDownController {
 		String dropJson = eDropServ.getDataByColDtlServ(jsonDrop);
 		return dropJson;
 	}
+	
+	//Final Main Proc, Other end points not required
+	@GetMapping("dropdown")
+	public String getddData(@RequestParam String formId, @RequestParam String colId,
+			@RequestParam String gridId,@RequestParam String jsonDrop) throws UnsupportedEncodingException {
+		String str = URLDecoder.decode(jsonDrop,"UTF-8");
+		String jsonDataSD = eDropServ.getDropDown(formId,colId,gridId,jsonDrop);
+		return jsonDataSD;
+		
+	}
+	
+	
 }

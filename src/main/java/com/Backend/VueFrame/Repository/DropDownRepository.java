@@ -31,6 +31,10 @@ public interface DropDownRepository extends JpaRepository<DropDownData, String> 
 			String getDropdownCols(@Param("formId") String formId, @Param("colId") String colId,
 							@Param("gridId") String gridId);
 		  
-		  @Procedure(procedureName="VF_DD_DYNAMIC_RUN", outputParameterName = "result")
-		  String getDataByColDtls(@Param("query_string") String query_string);
+		  @Procedure(procedureName="VF_DD_MAIN_PROC", outputParameterName = "p_result")
+		  String getDataByColDtls(@Param("p_query") String query_string);
+
+		  @Procedure(procedureName="VF_DD_DATA_MAIN_PROC", outputParameterName = "p_result")
+		  String getDDDataRep(@Param("p_formId") String formId, @Param("p_colId") String colId,
+					@Param("p_gridId") String gridId,@Param("p_jsonData") String jsonDrop);
 }

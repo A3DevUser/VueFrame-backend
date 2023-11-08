@@ -41,8 +41,7 @@ public interface ColumnHeaderRepository extends JpaRepository<ColumnHeaderData, 
             + "SUB_SEC_TYPE, ORDER_BY, CATEGORY_ID, GRID_ID, STICKY\r\n"
             + "from vf_column_header where FORM_ID = :formId\r\n"
             + "and CELL_TYPE = 'modalBtn'", nativeQuery = true)
-List<ColumnHeaderData> getlistofColumns(@Param("formId") String formId, @Param("emd") String gridId);                
-
+	List<ColumnHeaderData> getlistofColumns(@Param("formId") String formId, @Param("emd") String gridId);	
 
 	
 
