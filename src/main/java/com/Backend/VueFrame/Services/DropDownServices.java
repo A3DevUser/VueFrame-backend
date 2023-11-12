@@ -47,4 +47,10 @@ public class DropDownServices {
 		return query_out;
 	}
 	
+	public List<DropDownData> setDataDropDown(List <DropDownData> setData){
+		List<DropDownData> list = eDropRepo.saveAllAndFlush(setData);
+		return list;
+		
+	}
+	
 }
