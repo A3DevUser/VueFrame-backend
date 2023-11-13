@@ -71,6 +71,13 @@
     <version>2.14.1</version> <!-- Use the appropriate version -->
 </dependency>
 
+<!-- Spring Boot Starter dependency usually includes SLF4J and Logback -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter</artifactId>
+</dependency>
+
+
 <!-- logging dependency ending-->
 
 	</dependencies>

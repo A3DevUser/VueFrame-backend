@@ -1,5 +1,6 @@
 package com.Backend.VueFrame.Controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,10 +29,12 @@ public class DropDownParamController {
 	public List<DropDownParamModel> setDDParam (@RequestBody List<DropDownParamModel> ddData){
 		//List<DropDownParamModel> list = eDropServ.setDataDropDownParam(ddData);
 		
-		Map<String,Object> obj = new HashMap<>();
+	    List<DropDownParamModel> resultList = new ArrayList<>();
 
     	for (DropDownParamModel dropData :  ddData) {
     		eDropServ.setParamId(dropData);
+            resultList.add(dropData);
+
 //            obj.put("columnId",column.getColumnId());
 
     	}
