@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,7 +28,7 @@ public class DropDownParamController {
 	
 	
 	@PostMapping("setddparam")
-	public List<DropDownParamModel> setDDParam (@RequestBody List<DropDownParamModel> ddData){
+	public  ResponseEntity<List<DropDownParamModel>> setDDParam (@RequestBody List<DropDownParamModel> ddData){
 		//List<DropDownParamModel> list = eDropServ.setDataDropDownParam(ddData);
 		
 	    List<DropDownParamModel> resultList = new ArrayList<>();
@@ -38,8 +40,8 @@ public class DropDownParamController {
 //            obj.put("columnId",column.getColumnId());
 
     	}
-    	List<DropDownParamModel> list = eDropServ.setDataDropDownParam(ddData);
-		return list;
+    	List<DropDownParamModel> list = eDropServ.setDataDropDownParam(resultList);
+        return new ResponseEntity<>(list, HttpStatus.OK);
 	
 	}	
 	
