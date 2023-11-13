@@ -59,16 +59,7 @@ public class DropDownParamModel {
 		this.columnAccessor = columnAccessor;
 	}
 	
-	
 
-
-	public String getParamId() {
-		return paramId;
-	}
-
-	public void setParamId(String paramId) {
-		this.paramId = paramId;
-	}
 
 	public String getFormId() {
 		return formId;

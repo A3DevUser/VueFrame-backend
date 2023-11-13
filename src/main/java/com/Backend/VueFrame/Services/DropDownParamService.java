@@ -16,7 +16,7 @@ public class DropDownParamService {
 	@Autowired
 	private DropDownParamRepo eDropRepo;
 	
-	 public DropDownParamModel setParamId(@RequestBody DropDownParamModel setData) {
+	 public DropDownParamModel setParamData(DropDownParamModel setData) {
 		    String seq = eDropRepo.setParamSequence();
 		    String formattedParamId = "P-" + seq;
 		    setData.setparamId(formattedParamId);

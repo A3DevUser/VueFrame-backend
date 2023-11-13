@@ -35,7 +35,7 @@ public class DropDownParamController {
 	    List<DropDownParamModel> resultList = new ArrayList<>();
 
     	for (DropDownParamModel dropData :  ddData) {
-    		DropDownParamModel updateData = eDropServ.setParamId(dropData);
+    		DropDownParamModel updateData = eDropServ.setParamData(dropData);
             resultList.add(updateData);
 
 //            obj.put("columnId",column.getColumnId());
@@ -45,6 +45,8 @@ public class DropDownParamController {
         return new ResponseEntity<>(list, HttpStatus.OK);
 	
 	}	
+	
+	
 	
 	
 	
