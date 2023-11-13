@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Backend.VueFrame.Model.ColumnHeaderData;
+import com.Backend.VueFrame.Model.DropDownData;
 import com.Backend.VueFrame.Model.DropDownParamModel;
 import com.Backend.VueFrame.Services.DropDownParamService;
 
@@ -34,8 +35,8 @@ public class DropDownParamController {
 	    List<DropDownParamModel> resultList = new ArrayList<>();
 
     	for (DropDownParamModel dropData :  ddData) {
-    		eDropServ.setParamId(dropData);
-            resultList.add(dropData);
+    		DropDownParamModel updateData = eDropServ.setParamId(dropData);
+            resultList.add(updateData);
 
 //            obj.put("columnId",column.getColumnId());
 
@@ -44,5 +45,8 @@ public class DropDownParamController {
         return new ResponseEntity<>(list, HttpStatus.OK);
 	
 	}	
+	
+	
+	
 	
 }
