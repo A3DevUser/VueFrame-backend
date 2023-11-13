@@ -12,8 +12,8 @@ import javax.persistence.Table;
 public class DropDownParamModel {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	@Column(name="PARAMETER_ID")
+	private String paramId;
 	
 	@Column(name="DROP_ID")
 	private String dropId;
@@ -24,12 +24,12 @@ public class DropDownParamModel {
 	@Column(name="COLUMN_ACCESSOR")
 	private String columnAccessor;
 
-	public int getId() {
-		return id;
+	public String getparamId() {
+		return paramId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setparamId(String paramId) {
+		this.paramId = paramId;
 	}
 	
 	public String getDropId() {
@@ -57,9 +57,9 @@ public class DropDownParamModel {
 	}
 
 
-	public DropDownParamModel(int id, String dropId, String paramName, String columnAccessor) {
+	public DropDownParamModel(String paramId, String dropId, String paramName, String columnAccessor) {
 		super();
-		this.id = id;
+		this.paramId = paramId;
 		this.dropId = dropId;
 		this.paramName = paramName;
 		this.columnAccessor = columnAccessor;
