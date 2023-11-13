@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.Backend.VueFrame.Model.DropDownData;
+import com.Backend.VueFrame.Model.DropDownParamModel;
 import com.Backend.VueFrame.Repository.DropDownRepository;
 
 @Service
@@ -47,10 +49,20 @@ public class DropDownServices {
 		return query_out;
 	}
 	
+	 public DropDownData setDropDownId(@RequestBody DropDownData ddData) {
+		    String seq = eDropRepo.setDdId();
+		    String formattedParamId = "DD-" + seq;
+		    ddData.setDropdownId(formattedParamId);
+		    return ddData;
+		}
+	
 	public List<DropDownData> setDataDropDown(List <DropDownData> setData){
 		List<DropDownData> list = eDropRepo.saveAllAndFlush(setData);
 		return list;
 		
 	}
+
+
+	
 	
 }

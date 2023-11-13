@@ -15,9 +15,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class ColumnHeaderData {
 	
 	 @Id
-	    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "column_id_generator")
-	    @GenericGenerator(name = "column_id_generator", strategy = "com.Backend.VueFrame.CustomIDGenerator")
-
+	 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "column_id_generator")
+	 @GenericGenerator(name = "column_id_generator", strategy = "com.Backend.VueFrame.CustomIDGenerator")
 	@Column(name="COLUMN_ID")
 	private String columnId;
 	
@@ -62,8 +61,6 @@ public class ColumnHeaderData {
 	
 	@Column (name = "STICKY")
 	private String sticky;
-	
-	
 
 	public String getColumnId() {
 		return columnId;
@@ -121,8 +118,6 @@ public class ColumnHeaderData {
 		this.cellType = cellType;
 	}
 
-	
-	
 	public String getWidth() {
 		return width;
 	}
@@ -131,9 +126,6 @@ public class ColumnHeaderData {
 		this.width = width;
 	}
 
-	
-	
-	
 	public String getSubSecName() {
 		return subSecName;
 	}
@@ -149,10 +141,7 @@ public class ColumnHeaderData {
 	public void setSubSecId(String subSecId) {
 		this.subSecId = subSecId;
 	}
-	
-	
 
-	
 	public String getSubSecWidth() {
 		return subSecWidth;
 	}
@@ -169,9 +158,6 @@ public class ColumnHeaderData {
 		this.subSecType = subSecType;
 	}
 
-
-	
-
 	public String getNumber() {
 		return number;
 	}
@@ -179,7 +165,7 @@ public class ColumnHeaderData {
 	public void setNumber(String number) {
 		this.number = number;
 	}
-	
+
 	public String getGridId() {
 		return gridId;
 	}
@@ -196,9 +182,6 @@ public class ColumnHeaderData {
 		this.sticky = sticky;
 	}
 
-	
-
-	
 	public ColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
 			String secId, String cellType, String width, String subSecName, String subSecId, String subSecWidth,
 			String subSecType, String number, String gridId, String sticky) {
@@ -224,7 +207,10 @@ public class ColumnHeaderData {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
+	
 	
 	
 	

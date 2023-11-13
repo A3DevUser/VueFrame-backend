@@ -18,6 +18,10 @@ public interface DropDownRepository extends JpaRepository<DropDownData, String> 
 		
 		  @Procedure(procedureName="VF_DD_DYNAMIC_RUN", outputParameterName = "result")
 		  String getListofDropdown(@Param("query_string") String query_string);
+		  
+		  @Query(value = "SELECT vf_col_dd_id.NEXTVAL FROM DUAL", nativeQuery = true)
+		  String setDdId();
+		 
 		 
 
 		  @Query(value = "SELECT JSON_OBJECT('ddId' IS (SELECT DROPDOWN_ID FROM VF_COL_Dropdowns \r\n"

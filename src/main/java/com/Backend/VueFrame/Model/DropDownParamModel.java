@@ -23,6 +23,9 @@ public class DropDownParamModel {
 	
 	@Column(name="COLUMN_ACCESSOR")
 	private String columnAccessor;
+	
+	@Column(name = "FORM_ID")
+	private String formId;
 
 	public String getparamId() {
 		return paramId;
@@ -55,14 +58,35 @@ public class DropDownParamModel {
 	public void setColumnAccessor(String columnAccessor) {
 		this.columnAccessor = columnAccessor;
 	}
+	
+	
 
 
-	public DropDownParamModel(String paramId, String dropId, String paramName, String columnAccessor) {
+	public String getParamId() {
+		return paramId;
+	}
+
+	public void setParamId(String paramId) {
+		this.paramId = paramId;
+	}
+
+	public String getFormId() {
+		return formId;
+	}
+
+	public void setFormId(String formId) {
+		this.formId = formId;
+	}
+
+	
+
+	public DropDownParamModel(String paramId, String dropId, String paramName, String columnAccessor, String formId) {
 		super();
 		this.paramId = paramId;
 		this.dropId = dropId;
 		this.paramName = paramName;
 		this.columnAccessor = columnAccessor;
+		this.formId = formId;
 	}
 
 	public DropDownParamModel() {

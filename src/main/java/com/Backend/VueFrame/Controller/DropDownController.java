@@ -2,11 +2,14 @@ package com.Backend.VueFrame.Controller;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.Base64.Decoder;
 import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -70,9 +73,18 @@ public class DropDownController {
 	}
 	
 	@PostMapping("setddData")
-	public List<DropDownData> setDDData (@RequestBody List<DropDownData> ddData){
-		List<DropDownData> list = eDropServ.setDataDropDown(ddData);
-		return list;
-	
-	}
+	public ResponseEntity<List<DropDownData>> setDDData(@RequestBody List<DropDownData> ddData) {
+        List<DropDownData> updatedDropDownData = new ArrayList<>();
+
+        for (DropDownData data : ddData) {
+            // Set dropdownId for each item using setDropDownId method
+            DropDownData updatedData = eDropServ.setDropDownId(data);
+            updatedDropDownData.add(updatedData);
+        }
+
+        // Save the updated data using setDataDropDown method
+        List<DropDownData> savedData = eDropServ.setDataDropDown(updatedDropDownData);
+
+        return new ResponseEntity<>(savedData, HttpStatus.OK);
+    }
 }
