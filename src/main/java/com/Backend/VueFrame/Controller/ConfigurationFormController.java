@@ -64,7 +64,10 @@ public class ConfigurationFormController {
 	                gridData.setFormId(navBarData.getFormId());
 	                gridData.setGridName(combinedObject.getGridName());
 	                gridData.setDbTableName(combinedObject.getDbTableName());
+	                gridData.setIsMrow(combinedObject.getDbTableName());
 	                gridData.setIsMain(combinedObject.getIsMain());
+	                
+	                
 	                // Set other GridData fields as needed
 
 	                // Set the gridId for GridData
