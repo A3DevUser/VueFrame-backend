@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Backend.VueFrame.Model.FormData;
 import com.Backend.VueFrame.Model.WorkflowData;
+import com.Backend.VueFrame.Services.LoggerService;
 import com.Backend.VueFrame.Services.WorkflowService;
 
 @RestController
@@ -23,6 +24,9 @@ public class WorkflowController {
 	
 	@Autowired
 	private WorkflowService workFlowServ;
+	
+	@Autowired
+	private LoggerService logServ;
 	
 	@GetMapping("getWFName")
 	public List<WorkflowData> getWorkFlowData(@RequestParam String formId) {
@@ -40,6 +44,10 @@ public class WorkflowController {
 	
 	 @PostMapping("callWorkflowProcedure")
 	 public String insertData(@RequestBody String json) {
+		 
+		 logServ.log("e", "Error", "Error Details" + json);
+		 logServ.log("d", "Debug Subject", "Debug Details" + json);
+
 		 workFlowServ.callInsertDataFromDynamicJsonArray(json);
 		 return json;
 	    }

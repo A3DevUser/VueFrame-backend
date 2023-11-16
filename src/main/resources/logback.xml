@@ -8,9 +8,10 @@
 
     <!-- Rolling File Appender -->
     <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- Include the current date in the log file name -->
         <file>logs/application.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- Rollover at midnight every day -->
+            <!-- Rollover at midnight every day, include the current date -->
             <fileNamePattern>logs/application.%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>

@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Backend.VueFrame.Model.ColumnHeaderData;
+import com.Backend.VueFrame.Model.LogRequest;
 import com.Backend.VueFrame.Services.ColumnHeaderService;
+import com.Backend.VueFrame.Services.LoggerService;
 
 
 
@@ -28,13 +30,16 @@ public class ColumnHeaderController {
 	@Autowired
 	private ColumnHeaderService columnServ;
 	
-    private static final Logger logger = LoggerFactory.getLogger(ColumnHeaderController.class);
+	@Autowired
+	private LoggerService logServ;
+	
 
 	
 	@GetMapping("getcolumn")
 	public List<ColumnHeaderData> getcolumnData(@RequestParam String formId) {
-		logger.info("This is an information message." + formId);
-        logger.error("An error occurred.");
+		logServ.log("e", "Error Subject ", "Error Details");
+		logServ.log("d", "Debug Subject", "Debug Details");
+
 	   return columnServ.getColumnData(formId); 
 }	
 		
@@ -43,7 +48,6 @@ public class ColumnHeaderController {
 //	public List<ColumnHeaderData> getColumnByOrder(){
 //		return columnServ.getOrderData();
 //	} 
-	
 	
 	@PostMapping("setColumnHead") 
 	public List<ColumnHeaderData> setColumnData(@RequestBody List<ColumnHeaderData> setData) {
