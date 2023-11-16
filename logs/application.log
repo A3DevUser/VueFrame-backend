@@ -436,3 +436,111 @@ Caused by: java.net.ConnectException: Connection timed out: connect
 16:30:18.362 [Thread-25] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 16:30:18.362 [Thread-25] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
 16:30:18.618 [Thread-25] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+16:30:18.732 [restartedMain] INFO  c.B.VueFrame.VueFrameApplication - Starting VueFrameApplication using Java 17.0.1 on CPL-DEV-170 with PID 24320 (D:\Users\swapnalig\Desktop\A3 Application\VueFrame Backend Workspace\VueFrame\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\A3 Application\VueFrame Backend Workspace\VueFrame)
+16:30:18.734 [restartedMain] INFO  c.B.VueFrame.VueFrameApplication - No active profile set, falling back to 1 default profile: "default"
+16:30:18.980 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:30:19.052 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71 ms. Found 15 JPA repository interfaces.
+16:30:19.152 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:30:19.153 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16:30:19.154 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:30:19.154 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+16:30:19.187 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:30:19.187 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 448 ms
+16:30:19.213 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+16:30:19.794 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+16:30:19.801 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:30:19.810 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+16:30:20.048 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:30:20.048 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:30:20.538 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:30:20.546 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16:30:20.553 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:30:20.559 [restartedMain] INFO  c.B.VueFrame.VueFrameApplication - Started VueFrameApplication in 1.877 seconds (JVM running for 5692.479)
+16:30:20.561 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+16:48:41.593 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+16:48:41.657 [Thread-29] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+16:48:41.658 [Thread-29] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:48:41.680 [Thread-29] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+16:48:41.683 [Thread-29] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+16:48:41.688 [Thread-29] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:48:41.700 [Thread-29] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+16:48:41.991 [Thread-29] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+16:48:42.692 [restartedMain] INFO  c.B.VueFrame.VueFrameApplication - Starting VueFrameApplication using Java 17.0.1 on CPL-DEV-170 with PID 24320 (D:\Users\swapnalig\Desktop\A3 Application\VueFrame Backend Workspace\VueFrame\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\A3 Application\VueFrame Backend Workspace\VueFrame)
+16:48:42.693 [restartedMain] INFO  c.B.VueFrame.VueFrameApplication - No active profile set, falling back to 1 default profile: "default"
+16:48:43.350 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:48:43.701 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 350 ms. Found 15 JPA repository interfaces.
+16:48:44.036 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:48:44.037 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16:48:44.037 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:48:44.037 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+16:48:44.103 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:48:44.103 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1403 ms
+16:48:44.177 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+16:48:44.919 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+16:48:44.931 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:48:44.941 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+16:48:45.334 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:48:45.334 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:48:45.914 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:48:45.920 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16:48:45.948 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:48:45.952 [restartedMain] INFO  c.B.VueFrame.VueFrameApplication - Started VueFrameApplication in 3.54 seconds (JVM running for 6797.873)
+16:48:45.955 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+16:49:18.137 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+16:49:18.153 [Thread-33] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+16:49:18.153 [Thread-33] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:49:18.156 [Thread-33] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+16:49:18.157 [Thread-33] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+16:49:18.160 [Thread-33] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:49:18.160 [Thread-33] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+16:49:19.291 [Thread-33] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+16:49:19.642 [restartedMain] INFO  c.B.VueFrame.VueFrameApplication - Starting VueFrameApplication using Java 17.0.1 on CPL-DEV-170 with PID 24320 (D:\Users\swapnalig\Desktop\A3 Application\VueFrame Backend Workspace\VueFrame\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\A3 Application\VueFrame Backend Workspace\VueFrame)
+16:49:19.642 [restartedMain] INFO  c.B.VueFrame.VueFrameApplication - No active profile set, falling back to 1 default profile: "default"
+16:49:19.829 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:49:19.923 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 15 JPA repository interfaces.
+16:49:20.205 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:49:20.206 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16:49:20.206 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:49:20.206 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+16:49:20.350 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:49:20.351 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 706 ms
+16:49:20.415 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Starting...
+16:49:20.913 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Start completed.
+16:49:20.933 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:49:20.944 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+16:49:21.090 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:49:21.090 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:49:21.761 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:49:21.765 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16:49:21.808 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:49:21.811 [restartedMain] INFO  c.B.VueFrame.VueFrameApplication - Started VueFrameApplication in 2.266 seconds (JVM running for 6833.732)
+16:49:21.812 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+16:49:49.671 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+16:49:49.843 [Thread-37] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+16:49:49.844 [Thread-37] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:49:49.848 [Thread-37] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+16:49:49.849 [Thread-37] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+16:49:49.851 [Thread-37] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16:49:49.853 [Thread-37] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown initiated...
+16:49:50.125 [Thread-37] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown completed.
+16:49:50.276 [restartedMain] INFO  c.B.VueFrame.VueFrameApplication - Starting VueFrameApplication using Java 17.0.1 on CPL-DEV-170 with PID 24320 (D:\Users\swapnalig\Desktop\A3 Application\VueFrame Backend Workspace\VueFrame\target\classes started by swapnalig in D:\Users\swapnalig\Desktop\A3 Application\VueFrame Backend Workspace\VueFrame)
+16:49:50.276 [restartedMain] INFO  c.B.VueFrame.VueFrameApplication - No active profile set, falling back to 1 default profile: "default"
+16:49:50.448 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:49:50.500 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 15 JPA repository interfaces.
+16:49:50.631 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:49:50.632 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16:49:50.632 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:49:50.632 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+16:49:50.659 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:49:50.659 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 381 ms
+16:49:50.678 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Starting...
+16:49:51.206 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Start completed.
+16:49:51.215 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:49:51.227 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+16:49:51.483 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:49:51.483 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:49:52.283 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:49:52.294 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16:49:52.303 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:49:52.313 [restartedMain] INFO  c.B.VueFrame.VueFrameApplication - Started VueFrameApplication in 2.093 seconds (JVM running for 6864.233)
+16:49:52.316 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged

@@ -8,6 +8,7 @@ public class CombinedObject {
 	private String gridName;
 	private String dbTableName;
 	private String isMain;
+	private String isMrow;
 	
 	
 	public String getNavName() {
@@ -46,8 +47,17 @@ public class CombinedObject {
 	public void setIsMain(String isMain) {
 		this.isMain = isMain;
 	}
-	public CombinedObject(String navName, String navStoredValue, String navigate, String gridName,
-			String dbTableName, String isMain) {
+	
+	
+	public String getIsMrow() {
+		return isMrow;
+	}
+	public void setIsMrow(String isMrow) {
+		this.isMrow = isMrow;
+	}
+	
+	public CombinedObject(String navName, String navStoredValue, String navigate, String gridName, String dbTableName,
+			String isMain, String isMrow) {
 		super();
 		this.navName = navName;
 		this.navStoredValue = navStoredValue;
@@ -55,6 +65,7 @@ public class CombinedObject {
 		this.gridName = gridName;
 		this.dbTableName = dbTableName;
 		this.isMain = isMain;
+		this.isMrow = isMrow;
 	}
 	public CombinedObject() {
 		super();
