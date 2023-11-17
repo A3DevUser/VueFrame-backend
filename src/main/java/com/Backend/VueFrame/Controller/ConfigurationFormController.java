@@ -115,7 +115,7 @@ public class ConfigurationFormController {
 	        Map<String,Object> obj = new HashMap<>();
 	    	for (GridData grid :  gridData) {
 	    		confService.setGridId(grid);
-	            obj.put("fromId",grid.getFormId());
+	            obj.put("formId",grid.getFormId());
 	    	}
 	    	List<GridData> list = confService.setGridData(gridData);
 	  		return obj;
