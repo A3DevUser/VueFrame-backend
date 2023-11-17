@@ -17,6 +17,7 @@ public class ColumnHeaderData {
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "column_id_generator")
 	 @GenericGenerator(name = "column_id_generator", strategy = "com.Backend.VueFrame.CustomIDGenerator")
+	 
 	@Column(name="COLUMN_ID")
 	private String columnId;
 	
