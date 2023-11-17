@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
@@ -44,5 +45,9 @@ public interface ColumnHeaderRepository extends JpaRepository<ColumnHeaderData, 
 	List<ColumnHeaderData> getlistofColumns(@Param("formId") String formId, @Param("emd") String gridId);	
 
 	
+	
+	@Procedure(procedureName="VF_CREATE_GRIDS", outputParameterName = "p_result")
+	String getGridCreationDtls(@Param("p_form_id") String formId);	
+
 
 }

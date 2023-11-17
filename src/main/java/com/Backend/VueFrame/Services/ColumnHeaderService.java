@@ -42,5 +42,9 @@ public class ColumnHeaderService {
         //return null;
 }    
 
+    
+    public String getGridDataResp(String formId) {
+		return columnHeadRepo.getGridCreationDtls(formId);
+	}    
 	
 }

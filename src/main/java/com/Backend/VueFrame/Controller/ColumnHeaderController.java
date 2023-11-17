@@ -65,7 +65,10 @@ public class ColumnHeaderController {
 
   
 	
-
+	@GetMapping("gridCreation")
+	public String getGridResponse(@RequestParam String formId) {
+		return columnServ.getGridDataResp(formId); 
+	}
 	
 	
 	
