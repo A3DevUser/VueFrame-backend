@@ -61,7 +61,14 @@ public class ColumnHeaderData {
 	
 	@Column (name = "STICKY")
 	private String sticky;
-
+	
+	@Column(name = "DB_COLUMN_LIMIT")
+	private String dbcolLimit;
+	
+	@Column(name = "DB_COLUMN_CONST")
+	private String dbcolConst;
+	
+	
 	public String getColumnId() {
 		return columnId;
 	}
@@ -181,10 +188,30 @@ public class ColumnHeaderData {
 	public void setSticky(String sticky) {
 		this.sticky = sticky;
 	}
+	
+	
+
+	public String getDbcolLimit() {
+		return dbcolLimit;
+	}
+
+	public void setDbcolLimit(String dbcolLimit) {
+		this.dbcolLimit = dbcolLimit;
+	}
+
+	public String getDbcolConst() {
+		return dbcolConst;
+	}
+
+	public void setDbcolConst(String dbcolConst) {
+		this.dbcolConst = dbcolConst;
+	}
+
+	
 
 	public ColumnHeaderData(String columnId, String formId, String fieldName, String accessor, String columnFilterType,
 			String secId, String cellType, String width, String subSecName, String subSecId, String subSecWidth,
-			String subSecType, String number, String gridId, String sticky) {
+			String subSecType, String number, String gridId, String sticky, String dbcolLimit, String dbcolConst) {
 		super();
 		this.columnId = columnId;
 		this.formId = formId;
@@ -201,6 +228,8 @@ public class ColumnHeaderData {
 		this.number = number;
 		this.gridId = gridId;
 		this.sticky = sticky;
+		this.dbcolLimit = dbcolLimit;
+		this.dbcolConst = dbcolConst;
 	}
 
 	public ColumnHeaderData() {
