@@ -2,12 +2,9 @@ package com.Backend.VueFrame.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name= "VF_GRID_DETAILS")
@@ -25,7 +22,7 @@ public class GridData {
 	@Column(name = "DB_TABLE_NAME")
 	private String dbTableName;
 	
-	@Column(name = "GRID_TITLE")
+	@Column(name = "GRID_ACRONYM")
 	private String gridTitle;
 	
 	@Column(name = "SEC_ID")
@@ -39,6 +36,17 @@ public class GridData {
 	
 	@Column(name = "is_main")
 	private String isMain;
+	
+	@Column(name = "ORDER_ID")
+	private String orderId;
+
+	public String getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
 
 	public String getGridId() {
 		return gridId;
@@ -110,7 +118,7 @@ public class GridData {
 
 	
 	public GridData(String gridId, String gridName, String dbTableName, String gridTitle, String secId, String formId,
-			String isMrow, String isMain) {
+			String isMrow, String isMain, String orderId) {
 		super();
 		this.gridId = gridId;
 		this.gridName = gridName;
@@ -120,6 +128,7 @@ public class GridData {
 		this.formId = formId;
 		this.isMrow = isMrow;
 		this.isMain = isMain;
+		this.orderId = orderId;
 	}
 
 	public GridData() {

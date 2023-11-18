@@ -2,12 +2,8 @@ package com.Backend.VueFrame.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "VF_SECTION_DETAILS")
@@ -37,7 +33,17 @@ public class SectionData {
 	@Column(name = "HEIGHT")
 	private String height;
 	
+	@Column(name = "ORDER_ID")
+	private String orderId;
 	
+	public String getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
 	public String getSecId() {
 		return secId;
 	}
@@ -99,10 +105,8 @@ public class SectionData {
 	}
 	
 
-	
-
 	public SectionData(String secId, String formId, String secName, String secStoredValue, String isOpen, String width,
-			String height) {
+			String height, String orderId) {
 		super();
 		this.secId = secId;
 		this.formId = formId;
@@ -111,7 +115,10 @@ public class SectionData {
 		this.isOpen = isOpen;
 		this.width = width;
 		this.height = height;
+		this.orderId = orderId;
 	}
+
+
 
 	public SectionData() {
 		super();
