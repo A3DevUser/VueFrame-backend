@@ -21,6 +21,7 @@ import com.Backend.VueFrame.Model.CombinedResultDTO;
 import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.NavBarData;
 import com.Backend.VueFrame.Model.SectionData;
+import com.Backend.VueFrame.Services.ColumnHeaderService;
 import com.Backend.VueFrame.Services.ConfigurationFomrService;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 
@@ -33,6 +34,9 @@ public class ConfigurationFormController {
 
 	    @Autowired
 	    private ConfigurationFomrService confService;
+	    
+	    @Autowired
+	    private ColumnHeaderService confServ;
 	   
 
 	    @PostMapping("postConfigData")
@@ -105,11 +109,7 @@ public class ConfigurationFormController {
 	    	List<SectionData> list = confService.setSectionData(secData);
 	  		return obj;
 	    }
-	    
-	    
-	    
-
-	    
+	    	    
 	    @PostMapping("postGridData")
 	    public Object getGridData(@RequestBody List<GridData> gridData) {
 	        Map<String,Object> obj = new HashMap<>();
@@ -120,21 +120,20 @@ public class ConfigurationFormController {
 	    	List<GridData> list = confService.setGridData(gridData);
 	  		return obj;
 	    }
-	
-	    
+		    
 	    @PostMapping("postColumnData")
 	    public Object getColumnData(@RequestBody List<ColumnHeaderData> columnData) {
 	    	
 	        Map<String,Object> obj = new HashMap<>();
-
+	        String formId = null;
 	    	for (ColumnHeaderData column :  columnData) {
-	    		confService.setColumnId(column);
-//	            obj.put("columnId",column.getColumnId());
+	    		confService.setColumnId(column);	            
 	            obj.put("formId", column.getFormId());
-
+	            formId = column.getFormId();	            
 	    	}
-	    	List<ColumnHeaderData> list = confService.SetColumnData(columnData);
-	  		
+	    	List<ColumnHeaderData> list = confService.SetColumnData(columnData);	
+	    	String str = confServ.getGridDataResp(formId); 	    
+	    	obj.put("errMsg",str);
 	  		return obj;
 	    }
 	    

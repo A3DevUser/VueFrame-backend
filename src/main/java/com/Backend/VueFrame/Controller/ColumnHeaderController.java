@@ -62,15 +62,6 @@ public class ColumnHeaderController {
 	public List<ColumnHeaderData> getlistofColumns(@RequestParam String formId, @RequestParam String emd){
 		return columnServ.getlistofColumns(formId,emd); 
 	}
-
-  
-	
-	@GetMapping("gridCreation")
-	public String getGridResponse(@RequestParam String formId) {
-		return columnServ.getGridDataResp(formId); 
-	}
-	
-	
 	
 	
 }
