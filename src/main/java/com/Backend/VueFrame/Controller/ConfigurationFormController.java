@@ -113,11 +113,16 @@ public class ConfigurationFormController {
 	    @PostMapping("postGridData")
 	    public Object getGridData(@RequestBody List<GridData> gridData) {
 	        Map<String,Object> obj = new HashMap<>();
+	        String formId = null;
 	    	for (GridData grid :  gridData) {
 	    		confService.setGridId(grid);
 	            obj.put("formId",grid.getFormId());
+	            formId = grid.getFormId();	  
+	            
 	    	}
 	    	List<GridData> list = confService.setGridData(gridData);
+	    	String str = confService.getmrowUpdate(formId); 	    
+	    	obj.put("errMsg",str);
 	  		return obj;
 	    }
 		    
