@@ -53,15 +53,10 @@ public class ConfigurationFormController {
 	                obj.put("formId",navBarData.getFormId());
 	                navBarData.setNavName(combinedObject.getNavName());
 	                navBarData.setNavStoredValue(combinedObject.getNavStoredValue());
-	                navBarData.setNavigate(combinedObject.getNavigate());
-	                // Set other NavBarData fields as needed
+	                navBarData.setNavigate("/GridForm");
 
-	                // Set the formId for NavBarData
-
-	                // Add the NavBarData instance to the list
 	                navBarDataList.add(navBarData);
-	                // Create a new GridData instance
-	            	
+
 	                GridData gridData = new GridData();
 	                confService.setGridId(gridData);
 	                obj.put("gridId",gridData.getGridId());
@@ -69,7 +64,7 @@ public class ConfigurationFormController {
 	                gridData.setGridName(combinedObject.getGridName());
 	                gridData.setDbTableName(combinedObject.getDbTableName());
 	                gridData.setIsMrow(combinedObject.getIsMrow());
-	                gridData.setIsMain(combinedObject.getIsMain());
+	                gridData.setIsMain("true");
 	                
 	                
 	                // Set other GridData fields as needed

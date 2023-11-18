@@ -25,41 +25,20 @@ public class NavBarController {
 	
 	
 	@GetMapping("getNavEleFormId")
-	public List<NavBarData> getNavDataByFormId(@RequestParam String formId) {
-		
+	public List<NavBarData> getNavDataByFormId(@RequestParam String formId) {		
 		return navServ.getNavBarData(formId);
 	}
 	
 	@GetMapping("getNavEle")
-	public List<NavBarData> getNavData() {
-		
-		
+	public List<NavBarData> getNavData() {		
 		return navServ.getNavData();
-		
-		
-	}
-	
+
+	}	
 	
 	@PostMapping("setFormData")
 	public List<NavBarData> setNavData(@RequestBody List<NavBarData> setData) {
-		
-		
-		
-	List<NavBarData> list =  navServ.SetNavData(setData);
-	
-	return list;
-		
-		
-
+		List<NavBarData> list =  navServ.SetNavData(setData);
+		return list;
 	}
-	
-//	@GetMapping("getNavEle2")
-//	public List<NavBarData> getNav() {
-//		
-//		
-//		return navServ.getNavData();
-//		
-//		
-//	}
-//	
+
 }
