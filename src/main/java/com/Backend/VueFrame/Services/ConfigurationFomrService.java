@@ -118,9 +118,7 @@ public class ConfigurationFomrService {
   	    return setData;
   	}
       
-      public String setColumnId() {
-    	  return columnRepo.setColumnSequence();
-      }
+ 
       
       //set ColumnData
       public List<ColumnHeaderData> SetColumnData(@RequestBody List<ColumnHeaderData> setData) {

@@ -31,4 +31,11 @@ public class WorkflowService {
     }
 	
 
+	
+public List<WorkflowData> setWorkflowData(@RequestParam List<WorkflowData> setData) {
+		
+		List<WorkflowData> list = workFlowRepo.saveAll(setData);
+		
+		return list;
+	}
 }

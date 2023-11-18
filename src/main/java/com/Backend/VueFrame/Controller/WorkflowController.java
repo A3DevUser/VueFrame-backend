@@ -51,4 +51,12 @@ public class WorkflowController {
 		 workFlowServ.callInsertDataFromDynamicJsonArray(json);
 		 return json;
 	    }
+	 
+	 @PostMapping("setWorkflowData")
+	 public List<WorkflowData> setWorkflowData(@RequestBody List<WorkflowData> setData) {
+		 
+		 List<WorkflowData> list = workFlowServ.setWorkflowData(setData);
+		 
+		 return list;
+	 }
 }

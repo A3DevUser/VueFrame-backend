@@ -14,27 +14,40 @@ public class WorkflowData {
 	@Column(name = "FORM_ID")
 	private String formId;
 	
-	@Column(name = "WORKFLOW_NAME")
-	private String workflowName;
+	@Column(name = "STAGE")
+	private String stage;
 	
-	@Column(name = "PROCEDURE_NAME")
-	private String procedureName;
+	@Column(name = "STATUS")
+	private String status;
+	
+	@Column(name = "ACTION")
+	private String action;
 	
 	@Column(name = "NEXT_APPROVER")
 	private String nextApprover;
 	
-	@Column(name = "CURRENT_STAGE")
-	private String currentStage;
+	@Column(name = "MAKER")
+	private String maker;
+	
+	@Column(name = "CHECKER")
+	private String checker;
+	
+	@Column(name = "PROCEDURE")
+	private String procedure;
 	
 	@Column(name = "NEXT_STAGE")
 	private String nextStage;
 	
-	@Column(name= "PRIVIOUS_STAGE")
-	private String previousStage;
+	@Column(name = "NEXT_STATUS")
+	private String nextStatus;
 	
-	@Column(name = "ACTION")
-	private String action;
-
+	@Column(name = "HOOK_PROCEDURE")
+	private String hookProcedure;
+	
+	@Column(name = "GRID_ID")
+	private String gridId;
+	
+	
 	public String getWorkFlowId() {
 		return workFlowId;
 	}
@@ -51,52 +64,20 @@ public class WorkflowData {
 		this.formId = formId;
 	}
 
-	public String getWorkflowName() {
-		return workflowName;
+	public String getStage() {
+		return stage;
 	}
 
-	public void setWorkflowName(String workflowName) {
-		this.workflowName = workflowName;
+	public void setStage(String stage) {
+		this.stage = stage;
 	}
 
-	public String getProcedureName() {
-		return procedureName;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setProcedureName(String procedureName) {
-		this.procedureName = procedureName;
-	}
-
-	public String getNextApprover() {
-		return nextApprover;
-	}
-
-	public void setNextApprover(String nextApprover) {
-		this.nextApprover = nextApprover;
-	}
-
-	public String getCurrentStage() {
-		return currentStage;
-	}
-
-	public void setCurrentStage(String currentStage) {
-		this.currentStage = currentStage;
-	}
-
-	public String getNextStage() {
-		return nextStage;
-	}
-
-	public void setNextStage(String nextStage) {
-		this.nextStage = nextStage;
-	}
-
-	public String getPreviousStage() {
-		return previousStage;
-	}
-
-	public void setPreviousStage(String previousStage) {
-		this.previousStage = previousStage;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getAction() {
@@ -107,29 +88,94 @@ public class WorkflowData {
 		this.action = action;
 	}
 
-	public WorkflowData(String workFlowId, String formId, String workflowName, String procedureName,
-			String nextApprover, String currentStage, String nextStage, String previousStage, String action) {
+	public String getNextApprover() {
+		return nextApprover;
+	}
+
+	public void setNextApprover(String nextApprover) {
+		this.nextApprover = nextApprover;
+	}
+
+	public String getMaker() {
+		return maker;
+	}
+
+	public void setMaker(String maker) {
+		this.maker = maker;
+	}
+
+	public String getChecker() {
+		return checker;
+	}
+
+	public void setChecker(String checker) {
+		this.checker = checker;
+	}
+
+	public String getProcedure() {
+		return procedure;
+	}
+
+	public void setProcedure(String procedure) {
+		this.procedure = procedure;
+	}
+
+	public String getNextStage() {
+		return nextStage;
+	}
+
+	public void setNextStage(String nextStage) {
+		this.nextStage = nextStage;
+	}
+
+	public String getNextStatus() {
+		return nextStatus;
+	}
+
+	public void setNextStatus(String nextStatus) {
+		this.nextStatus = nextStatus;
+	}
+
+	public String getHookProcedure() {
+		return hookProcedure;
+	}
+
+	public void setHookProcedure(String hookProcedure) {
+		this.hookProcedure = hookProcedure;
+	}
+	
+	public String getGridId() {
+		return gridId;
+	}
+
+	public void setGridId(String gridId) {
+		this.gridId = gridId;
+	}
+	
+	
+	public WorkflowData(String workFlowId, String formId, String stage, String status, String action,
+			String nextApprover, String maker, String checker, String procedure, String nextStage,
+			String nextStatus, String hookProcedure, String gridId) {
 		super();
 		this.workFlowId = workFlowId;
 		this.formId = formId;
-		this.workflowName = workflowName;
-		this.procedureName = procedureName;
-		this.nextApprover = nextApprover;
-		this.currentStage = currentStage;
-		this.nextStage = nextStage;
-		this.previousStage = previousStage;
+		this.stage = stage;
+		this.status = status;
 		this.action = action;
+		this.nextApprover = nextApprover;
+		this.maker = maker;
+		this.checker = checker;
+		this.procedure = procedure;
+		this.nextStage = nextStage;
+		this.nextStatus = nextStatus;
+		this.hookProcedure = hookProcedure;
+		this.gridId = gridId;
 	}
+	
 
 	public WorkflowData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-	
-	
-	
-	
-
 }
