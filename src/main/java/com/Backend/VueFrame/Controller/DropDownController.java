@@ -3,9 +3,10 @@ package com.Backend.VueFrame.Controller;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Base64.Decoder;
 import java.util.List;
-
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -73,11 +74,14 @@ public class DropDownController {
 	}
 	
 	@PostMapping("setddData")
-	public ResponseEntity<List<DropDownData>> setDDData(@RequestBody List<DropDownData> ddData) {
+	public Map<String, Object> setDDData(@RequestBody List<DropDownData> ddData) {
         List<DropDownData> updatedDropDownData = new ArrayList<>();
+        Map<String,Object> obj = new HashMap<>();
 
         for (DropDownData data : ddData) {
             // Set dropdownId for each item using setDropDownId method
+            obj.put("formId",data.getFormId());
+
             DropDownData updatedData = eDropServ.setDropDownId(data);
             updatedDropDownData.add(updatedData);
         }
@@ -85,7 +89,7 @@ public class DropDownController {
         // Save the updated data using setDataDropDown method
         List<DropDownData> savedData = eDropServ.setDataDropDown(updatedDropDownData);
 
-        return new ResponseEntity<>(savedData, HttpStatus.OK);
+        return obj;
     }
 	
 }
