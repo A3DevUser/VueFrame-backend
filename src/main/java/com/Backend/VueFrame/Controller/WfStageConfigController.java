@@ -1,6 +1,8 @@
 package com.Backend.VueFrame.Controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,14 +23,19 @@ public class WfStageConfigController {
 	private WfStageConfigServices wfStageConfigServs; 
 	
 	@PostMapping("setWfStageConfig")
-	public List<WfStageConfigData> setWfStageConfig(@RequestBody List<WfStageConfigData> setData) {
+	public Object setWfStageConfig(@RequestBody List<WfStageConfigData> setData) {
 		
+		
+        Map<String,Object> obj = new HashMap<>();
+
 		for(WfStageConfigData wf : setData) {
 			wfStageConfigServs.setConfigId(wf);
+            obj.put("formId",wf.getFormId());
+			
 		}
 		
 		List<WfStageConfigData> list = wfStageConfigServs.setWfStageConfig(setData);
 		
-		return list;
+		return obj;
 	}
 }
