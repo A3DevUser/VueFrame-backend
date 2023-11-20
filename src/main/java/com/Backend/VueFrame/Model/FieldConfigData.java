@@ -6,42 +6,48 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 
 @Entity
-@Table(name = "VF_FIELD_CONFIGURATION_DETAILS")
+@Table(name = "VF_FIELD_CONF")
 public class FieldConfigData {
 	
 	@Id
-	@Column(name = "ID")
-	private String id;
+	@Column(name = "FIELD_ID")
+	private String fieldId;
 	
-	@Column(name = "WORKFLOW_NAME")
-	private String workflowName;
+	@Column(name = "WF_ID")
+	private String wfId;
+	
+	@Column(name = "GRID_NAME")
+	private String gridName;
 	
 	@Column(name = "COLUMN_NAME")
 	private String columnName;
-	
-	@Column(name = "SECTION_NAME")
-	private String sectionName;
 	
 	@Column(name = "EDITABLE")
 	private String editable;
 
 	
-	
-
-	public String getId() {
-		return id;
+	public String getFieldId() {
+		return fieldId;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setFieldId(String fieldId) {
+		this.fieldId = fieldId;
 	}
 
-	public String getWorkflowName() {
-		return workflowName;
+	public String getWfId() {
+		return wfId;
 	}
 
-	public void setWorkflowName(String workflowName) {
-		this.workflowName = workflowName;
+	public void setWfId(String wfId) {
+		this.wfId = wfId;
+	}
+
+	public String getGridName() {
+		return gridName;
+	}
+
+	public void setGridName(String gridName) {
+		this.gridName = gridName;
 	}
 
 	public String getColumnName() {
@@ -52,14 +58,6 @@ public class FieldConfigData {
 		this.columnName = columnName;
 	}
 
-	public String getSectionName() {
-		return sectionName;
-	}
-
-	public void setSectionName(String sectionName) {
-		this.sectionName = sectionName;
-	}
-
 	public String getEditable() {
 		return editable;
 	}
@@ -68,18 +66,25 @@ public class FieldConfigData {
 		this.editable = editable;
 	}
 
-	public FieldConfigData(String id, String workflowName, String columnName, String sectionName, String editable) {
+	
+	public FieldConfigData(String fieldId, String wfId, String gridName, String columnName, String editable) {
 		super();
-		this.id = id;
-		this.workflowName = workflowName;
+		this.fieldId = fieldId;
+		this.wfId = wfId;
+		this.gridName = gridName;
 		this.columnName = columnName;
-		this.sectionName = sectionName;
 		this.editable = editable;
 	}
 
+	
 	public FieldConfigData() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	
+	
 	
 }

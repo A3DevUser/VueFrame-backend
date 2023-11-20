@@ -34,5 +34,16 @@ public interface WorkflowRepository extends JpaRepository<WorkflowData, String> 
 //	
 	 @Procedure(procedureName = "VF_JSONARRAYPACKAGE.InsertDataFromDynamicJsonArray")
 	    void insertDataFromDynamicJsonArray(@Param("p_json_array") String json);
-	}
+	 
+	 @Procedure(procedureName = "SET_GRID_DATA")
+		void setGridData(@Param("p_gridId") String gridId);
 
+
+	@Query(value = "SELECT VF_WF_SEQ.NEXTVAL FROM DUAL", nativeQuery = true)
+			String setWfSequence();
+
+	
+}
+
+
+     

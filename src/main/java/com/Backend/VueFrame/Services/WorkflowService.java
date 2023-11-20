@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.Backend.VueFrame.Model.FormData;
@@ -30,7 +31,17 @@ public class WorkflowService {
 		
     }
 	
-
+	public void callSetGridData(String gridId) {
+		workFlowRepo.setGridData(gridId);
+	}
+	
+	
+	public WorkflowData setWfId(@RequestBody WorkflowData setData) {
+		String seq = workFlowRepo.setWfSequence();
+	    String formattedWfId = "WF-" + seq;
+	    setData.setWfId(formattedWfId);
+	    return setData;
+	}
 	
 public List<WorkflowData> setWorkflowData(@RequestParam List<WorkflowData> setData) {
 		

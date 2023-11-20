@@ -1,6 +1,8 @@
 package com.Backend.VueFrame.Controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -41,22 +43,58 @@ public class WorkflowController {
 //S
 //    }
 //	
-	
-	 @PostMapping("callWorkflowProcedure")
-	 public String insertData(@RequestBody String json) {
-		 
-		 logServ.log("e", "Error", "Error Details" + json);
-		 logServ.log("d", "Debug Subject", "Debug Details" + json);
-
-		 workFlowServ.callInsertDataFromDynamicJsonArray(json);
-		 return json;
+	@PostMapping("callWorkflowProcedure")
+	public String insertData(@RequestBody(required = false) String json) {
+	    if (json != null) {
+	        logServ.log("e", "Error", "Error Details" + json);
+	        logServ.log("d", "Debug Subject", "Debug Details" + json);
+	        workFlowServ.callInsertDataFromDynamicJsonArray(json);
 	    }
+
+	    return json;
+	}
+	
+	
+	
+//	
+//	 @PostMapping("callWorkflowProcedure")
+//	    public String callWorkflowProcedure(@RequestBody String json, @RequestParam(required = false) String GRID_ID) {
+//
+//		 logServ.log("e", "Error", "Error Details" + json);
+//	        logServ.log("d", "Debug Subject", "Debug Details" + json);
+//
+//	        workFlowServ.callInsertDataFromDynamicJsonArray(json);
+//
+//	        if (GRID_ID != null) {
+//	            workFlowServ.callSetGridData(GRID_ID);
+//	        }
+//
+//	        return json;
+//	    }
+//	 
+	 
+	
+	
+	 
+	@PostMapping("setWorkFlowGridData")
+	 public void callSetGridData(@RequestParam String gridId) {
+		 workFlowServ.callSetGridData(gridId);
+	 }
+//	 
 	 
 	 @PostMapping("setWorkflowData")
-	 public List<WorkflowData> setWorkflowData(@RequestBody List<WorkflowData> setData) {
+	 public Object setWorkflowData(@RequestBody List<WorkflowData> setData) {
 		 
-		 List<WorkflowData> list = workFlowServ.setWorkflowData(setData);
+	        Map<String,Object> obj = new HashMap<>();
+
 		 
-		 return list;
+		 for (WorkflowData wf :  setData) {
+			 workFlowServ.setWfId(wf);
+             obj.put("wfId",wf.getWfId());
+
+		 }
+			 List<WorkflowData> list = workFlowServ.setWorkflowData(setData);
+		 
+		 return obj;
 	 }
 }
