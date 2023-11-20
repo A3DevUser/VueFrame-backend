@@ -23,6 +23,10 @@ public class FieldConfigController {
 	@PostMapping("setFieldConfig")
 	public List<FieldConfigData> setFieldConfig(@RequestBody List<FieldConfigData> setData) {
 		
+		for (FieldConfigData i :  setData) {
+			fieldConfigServices.setFieldId(i);
+		 }
+		
 		List<FieldConfigData> list = fieldConfigServices.setFieldConfig(setData);
 		
 		return list;

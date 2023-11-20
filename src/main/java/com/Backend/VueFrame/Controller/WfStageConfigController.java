@@ -23,6 +23,10 @@ public class WfStageConfigController {
 	@PostMapping("setWfStageConfig")
 	public List<WfStageConfigData> setWfStageConfig(@RequestBody List<WfStageConfigData> setData) {
 		
+		for(WfStageConfigData wf : setData) {
+			wfStageConfigServs.setConfigId(wf);
+		}
+		
 		List<WfStageConfigData> list = wfStageConfigServs.setWfStageConfig(setData);
 		
 		return list;

@@ -91,6 +91,8 @@ public class WorkflowController {
 		 for (WorkflowData wf :  setData) {
 			 workFlowServ.setWfId(wf);
              obj.put("wfId",wf.getWfId());
+             obj.put("wfId",wf.getFormId());
+
 
 		 }
 			 List<WorkflowData> list = workFlowServ.setWorkflowData(setData);

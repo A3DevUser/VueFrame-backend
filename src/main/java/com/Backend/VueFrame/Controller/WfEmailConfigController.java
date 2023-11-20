@@ -23,6 +23,10 @@ public class WfEmailConfigController {
 	@PostMapping("setWfEmailConfig")
 	public List<WfEmailConfigData> setWfEmailConfig(@RequestBody List<WfEmailConfigData> setData) {
 		
+		for(WfEmailConfigData i : setData) {
+			wfEmailConfigServs.setEcId(i);
+		}
+		
 		List<WfEmailConfigData> list = wfEmailConfigServs.setWfEmailConfig(setData);
 		
 		return list;

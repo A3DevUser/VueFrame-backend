@@ -14,6 +14,14 @@ public class WfStageConfigServices {
 	@Autowired
 	private WfStageConfigRepository wfStageConfigRepo;
 	
+	
+	public WfStageConfigData setConfigId(WfStageConfigData setData) {
+		String seq = wfStageConfigRepo.setStageSequence();
+		String formatedstr = "SC-"+seq;
+		setData.setConfigId(formatedstr);
+		return setData;
+	}
+	
 	public List<WfStageConfigData> setWfStageConfig(List<WfStageConfigData> setData) {
 		
 		List<WfStageConfigData> list = wfStageConfigRepo.saveAll(setData);
