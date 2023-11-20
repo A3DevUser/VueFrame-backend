@@ -128,6 +128,10 @@ public class ConfigurationFomrService {
   		return list;
   	}
 
+	public String getmrowUpdate(String formId) {
+		return gridRepo.getMrowData(formId);
+	}
+
           
 	
 	}

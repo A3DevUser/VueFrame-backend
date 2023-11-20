@@ -21,6 +21,7 @@ import com.Backend.VueFrame.Model.CombinedResultDTO;
 import com.Backend.VueFrame.Model.GridData;
 import com.Backend.VueFrame.Model.NavBarData;
 import com.Backend.VueFrame.Model.SectionData;
+import com.Backend.VueFrame.Services.ColumnHeaderService;
 import com.Backend.VueFrame.Services.ConfigurationFomrService;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 
@@ -33,6 +34,9 @@ public class ConfigurationFormController {
 
 	    @Autowired
 	    private ConfigurationFomrService confService;
+	    
+	    @Autowired
+	    private ColumnHeaderService confServ;
 	   
 
 	    @PostMapping("postConfigData")
@@ -49,15 +53,10 @@ public class ConfigurationFormController {
 	                obj.put("formId",navBarData.getFormId());
 	                navBarData.setNavName(combinedObject.getNavName());
 	                navBarData.setNavStoredValue(combinedObject.getNavStoredValue());
-	                navBarData.setNavigate(combinedObject.getNavigate());
-	                // Set other NavBarData fields as needed
+	                navBarData.setNavigate("/GridForm");
 
-	                // Set the formId for NavBarData
-
-	                // Add the NavBarData instance to the list
 	                navBarDataList.add(navBarData);
-	                // Create a new GridData instance
-	            	
+
 	                GridData gridData = new GridData();
 	                confService.setGridId(gridData);
 	                obj.put("gridId",gridData.getGridId());
@@ -65,7 +64,7 @@ public class ConfigurationFormController {
 	                gridData.setGridName(combinedObject.getGridName());
 	                gridData.setDbTableName(combinedObject.getDbTableName());
 	                gridData.setIsMrow(combinedObject.getIsMrow());
-	                gridData.setIsMain(combinedObject.getIsMain());
+	                gridData.setIsMain("true");
 	                
 	                
 	                // Set other GridData fields as needed
@@ -105,36 +104,36 @@ public class ConfigurationFormController {
 	    	List<SectionData> list = confService.setSectionData(secData);
 	  		return obj;
 	    }
-	    
-	    
-	    
-
-	    
+	    	    
 	    @PostMapping("postGridData")
 	    public Object getGridData(@RequestBody List<GridData> gridData) {
 	        Map<String,Object> obj = new HashMap<>();
+	        String formId = null;
 	    	for (GridData grid :  gridData) {
 	    		confService.setGridId(grid);
 	            obj.put("formId",grid.getFormId());
+	            formId = grid.getFormId();	  
+	            
 	    	}
 	    	List<GridData> list = confService.setGridData(gridData);
+	    	String str = confService.getmrowUpdate(formId); 	    
+	    	obj.put("errMsg",str);
 	  		return obj;
 	    }
-	
-	    
+		    
 	    @PostMapping("postColumnData")
 	    public Object getColumnData(@RequestBody List<ColumnHeaderData> columnData) {
 	    	
 	        Map<String,Object> obj = new HashMap<>();
-
+	        String formId = null;
 	    	for (ColumnHeaderData column :  columnData) {
-	    		confService.setColumnId(column);
-//	            obj.put("columnId",column.getColumnId());
+	    		confService.setColumnId(column);	            
 	            obj.put("formId", column.getFormId());
-
+	            formId = column.getFormId();	            
 	    	}
-	    	List<ColumnHeaderData> list = confService.SetColumnData(columnData);
-	  		
+	    	List<ColumnHeaderData> list = confService.SetColumnData(columnData);	
+	    	String str = confServ.getGridDataResp(formId); 	    
+	    	obj.put("errMsg",str);
 	  		return obj;
 	    }
 	    
